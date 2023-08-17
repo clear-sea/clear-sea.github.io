@@ -1,0 +1,148 @@
+html,body {
+    width:100%;
+    margin:0px;
+    padding:0px;
+}
+
+:root {
+    --color:rgb(255, 255, 255);
+    --linkHoverColor:skyblue;
+    --panelBGColor:rgba(0, 0, 0, 0.25);
+    --panelHoverBGColor:rgba(0, 0, 0, 0.35);
+}
+
+.main {
+    background-image: url(../images/mainBG.jpg);
+    background-attachment:fixed;        /*当内容高度大于图片高度时，背景图像的位置相对于viewport固定*/
+    background-color:black; 
+    background-size: cover;
+    background-repeat:no-repeat;
+    /*height: 100%;*/
+    width:100%;
+}
+
+h1 {
+    color:rgb(0, 102, 255);
+    text-align:center;
+}
+p {
+    font-family:"Times New Roman";
+    font-size:20px;
+    color: var(--color);
+}
+/*超链接*/
+a {
+    color:var(--color);
+    transition: all 0.5s linear;
+}
+a:hover {
+    color: var(--linkHoverColor);
+    transition: all 0.5s linear;
+}
+
+h2 {
+    color:rgb(28, 146, 224);
+    text-align:right;
+}
+
+/*面板*/
+/*面板出现动画*/
+@keyframes panel-show {
+    0% {
+        top:300px;
+        opacity: 0;
+    }
+    100% {
+        top:0px;
+        opacity: 1;
+    }
+}
+
+@-webkit-keyframes panel-show {
+    0% {
+        top:300px;
+        opacity: 0;
+    }
+    100% {
+        top:0px;
+        opacity: 1;
+    }
+}
+
+@-moz-keyframes panel-show {
+    0% {
+        top:300px;
+        opacity: 0;
+    }
+    100% {
+        top:0px;
+        opacity: 1;
+    }
+}
+
+@-o-keyframes panel-show {
+    0% {
+        top:300px;
+        opacity: 0;
+    }
+    100% {
+        top:0px;
+        opacity: 1;
+    }
+}
+
+.panel {
+    padding: 20px;
+    border-radius: 15px;
+    background-color: var(--panelBGColor);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter:blur(5px);
+    width: 80%;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    position: relative;
+    transition: all 0.6s ease-in-out;
+    animation: panel-show 1s ease-in-out;
+    -webkit-animation: panel-show 1s ease-in-out;
+    -moz-animation: panel-show 1s ease-in-out;
+    -o-animation: panel-show 1s ease-in-out;
+
+    z-index: 1;
+}
+
+.panel:hover {
+    background-color: var(--panelHoverBGColor);
+    transition: all 0.6s ease-in-out;
+}
+
+/*表格样式*/
+table {
+    border-right: 1px solid var(--color);
+    border-bottom: 1px solid var(--color);
+    color: var(--color);
+    text-align: center;
+}
+
+table th {
+    border-right: 1px solid var(--color);
+    border-top: 1px solid var(--color);
+}
+
+table td {
+    border-right: 1px solid var(--color);
+    border-top: 1px solid var(--color);
+}
+
+/*注释*/
+.comment {
+    font-style: italic;
+    font-weight: 100;
+    color:rgb(179, 179, 179);
+}
+
+/*选择文本时的样式*/
+*::selection {
+    background-color: gray;
+}

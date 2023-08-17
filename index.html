@@ -1,209 +1,73 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <meta charset="utf-8">
+    <head>
+        <!--设置文档默认编码-->
+        <meta charset="UTF-8" name="viewport" content="width=device-width">
   
-  
-  <title>Hexo</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://example.com/index.html">
-<meta property="og:site_name" content="Hexo">
-<meta property="og:locale" content="en_US">
-<meta property="article:author" content="John Doe">
-<meta name="twitter:card" content="summary">
-  
-    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
-  
-  
-    <link rel="shortcut icon" href="/favicon.png">
-  
-  
-    
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
-
-  
-  
-<link rel="stylesheet" href="/css/style.css">
-
-  
-    
-<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
-
-  
-  
-<meta name="generator" content="Hexo 6.3.0"></head>
-
-<body>
-  <div id="container">
-    <div id="wrap">
-      <header id="header">
-  <div id="banner"></div>
-  <div id="header-outer" class="outer">
-    <div id="header-title" class="inner">
-      <h1 id="logo-wrap">
-        <a href="/" id="logo">Hexo</a>
-      </h1>
-      
-    </div>
-    <div id="header-inner" class="inner">
-      <nav id="main-nav">
-        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+        <!--网页的title-->
+        <title>清澈的海水</title>
+        <link rel="icon" href="images/icon.png">
+        <script src="js/initPage.js"></script>
+        <script src="js/changeStyle.js"></script>
+        <script>importCSS();</script>
+    </head>
         
-          <a class="main-nav-link" href="/">Home</a>
+    <body class="main">
+        <!--顶部导航栏-->
+        <script>
+            createNav();
+        </script>
+
+        <!--卡片-->
+        <div class="panel">
+            <p style="text-align:center;font-size:40px;">GitHub成就</p>
+
+            <div align="right"> <img src="https://camo.githubusercontent.com/045216ce679fbfcd91ee7f6a8b8216f158313911e24d77252b05d5ceaa425fb7/68747470733a2f2f6769746875622d726561646d652d73747265616b2d73746174732e6865726f6b756170702e636f6d2f3f757365723d636c6561722d736561"/> </div>
+
+            <div align="left"> <img src="https://camo.githubusercontent.com/00866e452b18e3cda7a8423649c6f2bd8f7840f19d7eaa2398539e05ad873248/68747470733a2f2f6769746875622d726561646d652d73746174732e76657263656c2e6170702f6170692f746f702d6c616e67732f3f757365726e616d653d636c6561722d73656126686964655f7469746c653d7472756526686964655f626f726465723d74727565266c61796f75743d636f6d70616374266c616e67735f636f756e743d3626746578745f636f6c6f723d3030302669636f6e5f636f6c6f723d6666662662675f636f6c6f723d302c3532666135612c3464666366662c633634646666267468656d653d677261797768697465"/> </div>
+        </div>
         
-          <a class="main-nav-link" href="/archives">Archives</a>
+        <div style="height: 50px;"></div>
+
+        <!--动态打字-->
+        <div style="margin: auto;" align="center">
+            <!-- https://github.com/DenverCoder1/readme-typing-svg/ -->
+            <svg xmlns='http://www.w3.org/2000/svg'
+            xmlns:xlink='http://www.w3.org/1999/xlink'
+            viewBox='0 0 400 50'
+            style='background-color: #00000000;'
+            width='400px' height='50px'>
+                        <path id='path0'>
+                                    <!-- Single line -->
+                                        <animate id='d0' attributeName='d' begin='0s;d1.end'
+                            dur='5000ms' fill='remove'
+                            values='m0,25 h0 ; m0,25 h400 ; m0,25 h400 ; m0,25 h0' keyTimes='0;0.8;0.8;1' />
+                            </path>
+            <text font-family='"monospace", monospace' fill='orange' font-size='27'
+                dominant-baseline='auto'
+                x='50%' text-anchor='middle'>
+                <textPath xlink:href='#path0'>
+                    print(&quot;Hello, World!&quot;)
+                </textPath>
+            </text>
+                <path id='path1'>
+                                    <!-- Single line -->
+                                        <animate id='d1' attributeName='d' begin='d0.end'
+                            dur='5000ms' fill='remove'
+                            values='m0,25 h0 ; m0,25 h400 ; m0,25 h400 ; m0,25 h0' keyTimes='0;0.8;0.8;1' />
+                            </path>
+            <text font-family='"monospace", monospace' fill='orange' font-size='27'
+                dominant-baseline='auto'
+                x='50%' text-anchor='middle'>
+                <textPath xlink:href='#path1'>
+                    让每一行代码为开源世界贡献！
+                </textPath>
+            </text>
+            </svg>
+        </div>
+
+        <!--copyright-->
+        <script>createCopyrightBlock();</script>
         
-      </nav>
-      <nav id="sub-nav">
-        
-        
-          <a class="nav-icon" href="/atom.xml" title="RSS Feed"><span class="fa fa-rss"></span></a>
-        
-        <a class="nav-icon nav-search-btn" title="Search"><span class="fa fa-search"></span></a>
-      </nav>
-      <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
-      </div>
-    </div>
-  </div>
-</header>
-
-      <div class="outer">
-        <section id="main">
-  
-    <article id="post-hello-world" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2023/08/17/hello-world/" class="article-date">
-  <time class="dt-published" datetime="2023-08-17T07:57:03.418Z" itemprop="datePublished">2023-08-17</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2023/08/17/hello-world/">Hello World</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2023/08/17/hello-world/" data-id="cllevd2lc0000ccv5g7gj9sel" data-title="Hello World" class="article-share-link"><span class="fa fa-share">Share</span></a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-
-
-</section>
-        
-          <aside id="sidebar">
-  
-    
-
-  
-    
-
-  
-    
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Archives</h3>
-    <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/08/">August 2023</a></li></ul>
-    </div>
-  </div>
-
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Recent Posts</h3>
-    <div class="widget">
-      <ul>
-        
-          <li>
-            <a href="/2023/08/17/hello-world/">Hello World</a>
-          </li>
-        
-      </ul>
-    </div>
-  </div>
-
-  
-</aside>
-        
-      </div>
-      <footer id="footer">
-  
-  <div class="outer">
-    <div id="footer-info" class="inner">
-      
-      &copy; 2023 John Doe<br>
-      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
-    </div>
-  </div>
-</footer>
-
-    </div>
-    <nav id="mobile-nav">
-  
-    <a href="/" class="mobile-nav-link">Home</a>
-  
-    <a href="/archives" class="mobile-nav-link">Archives</a>
-  
-</nav>
-    
-
-
-<script src="/js/jquery-3.6.4.min.js"></script>
-
-
-
-  
-<script src="/fancybox/jquery.fancybox.min.js"></script>
-
-
-
-
-<script src="/js/script.js"></script>
-
-
-
-
-
-  </div>
-</body>
+    </body>
 </html>

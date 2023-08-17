@@ -1,0 +1,62 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <!--网页的title-->
+        <title>清澈的海水|博客</title>
+        <link rel="stylesheet" type="text/css" href="css/blogs.css">
+
+        <link rel="icon" href="images/icon.png">
+        <style>
+            .panel {
+                height:auto;
+                margin: 0px auto 20px;
+                text-align: center;
+            }
+        </style>
+
+        <script src="js/initPage.js"></script>
+        <script>importCSS();</script>
+        <script src="js/showBlogs.js"></script>
+        <script src="js/changeStyle.js"></script>
+    </head>
+
+    <body>
+        <!--顶部导航栏-->
+        <script>
+            createNav();
+        </script>
+
+        <!--正文-->
+        <style>
+            a:not(.nav-btn a) {
+                color: white;
+                text-decoration: none;
+                font-size: 25px;
+            }
+            p {
+                font-size: 15px;
+                color:white;
+            }
+        </style>
+        <!--博客-->
+        <script>
+            showBlog("【笔记】C++类的构造函数和析构函数","2023-07-13","2023-8-15","清澈的海水","blogs/11.html")
+            showBlog("【玩】Lyra的玩法","2023-07-10","2023-07-10","清澈的海水","blogs/10.html")
+            showBlog("【小游戏】用C++结合EasyX制作扫雷3(完结)","2023-01-27","2023-06-23","清澈的海水","blogs/9.html")
+            showBlog("【小游戏】用C++结合EasyX制作扫雷2","2023-01-27","2023-06-23","清澈的海水","blogs/8.html")
+            showBlog("【小游戏】用C++结合EasyX制作扫雷1","2023-01-27","2023-06-23","清澈的海水","blogs/7.html")
+            showBlog("【整活】C++结合EasyX电子木鱼","2023-02-04","2023-06-22","清澈的海水","blogs/6.html")
+            showBlog("【前端&随笔】HTML字符实体","2023-06-17","2023-06-17","清澈的海水","blogs/5.html")
+            showBlog("【随笔】VSCode离线下载扩展","2023-6-17","2023-06-17","清澈的海水","blogs/4.html")
+            showBlog("【随笔】MarkDown基础","2023-05-20","2023-05-20","清澈的海水","blogs/3.html")
+            showBlog("【C++笔记】数据结构之——栈","2023-05-20","2023-05-20","清澈的海水","blogs/2.html")
+            showBlog("【教程&整活】python第三方库pynput全局键盘监听+demo“ikun键盘”","2023-02-04","2023-05-03","清澈的海水","blogs/1.html")
+        </script>
+        <!--Copyright-->
+        <script>
+            createCopyrightBlock();
+        </script>
+    </body>
+</html>

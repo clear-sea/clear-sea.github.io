@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+        <meta charset="utf-8">
+        <title>导航栏示例</title>
+        <script src="js/changeStyle.js"></script>
+        <script src="js/initPage.js"></script>
+        <script>importCSS();</script>
+    </head>
+
+    <body>
+        <ul class="nav-bar">
+            <li class="nav-btn" style="background-image: url(images/icon.png);background-size: 50px 50px;width: 50px;"></li>
+            <li class="nav-btn"><a href="index.html" target="_blank">主页</a></li>
+            <li class="nav-btn"><a href="pages.html" target="_blank">页面</a></li>
+            <li class="nav-btn"><a href="downloads.html" target="_blank">下载</a></li>
+            <li class="nav-btn"><a href="blogMain.html" target="_blank">博客</a></li>
+            <li class="nav-btn"><a href="about.html" target="_blank">关于</a></li>
+
+            <li class="btn-dark"><a href="javascript:change(`mainLight`,`mainDark`);change(`navLight`,`navDark`);"></a></li>
+            <li class="btn-light"><a href="javascript:change(`mainDark`,`mainLight`);change(`navDark`,`navLight`);"></a></li>
+        </ul>
+    </body>
+</html>
