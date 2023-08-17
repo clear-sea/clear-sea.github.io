@@ -5,7 +5,7 @@ function createNav() {
     document.writeln("            <li class=\"nav-btn\"><a href=\"index.html\" target=\"_blank\">主页</a></li>");
     document.writeln("            <li class=\"nav-btn\"><a href=\"pages.html\" target=\"_blank\">页面</a></li>");
     document.writeln("            <li class=\"nav-btn\"><a href=\"downloads.html\" target=\"_blank\">下载</a></li>");
-    document.writeln("            <li class=\"nav-btn\"><a href=\"https://github.com/clear-sea/blogs/\" target=\"_blank\">博客</a></li>");
+    document.writeln("            <li class=\"nav-btn\"><a href=\"https://clear-sea.github.io/blogs/\" target=\"_blank\">博客</a></li>");
     document.writeln("            <li class=\"nav-btn\"><a href=\"about.html\" target=\"_blank\">关于</a></li>");
     document.writeln("            <li class=\"btn-dark\"><a href=\"javascript:change(`mainLight`,`mainDark`);change(`navLight`,`navDark`);\"></a></li>");
     document.writeln("            <li class=\"btn-light\"><a href=\"javascript:change(`mainDark`,`mainLight`);change(`navDark`,`navLight`);\"></a></li>");
