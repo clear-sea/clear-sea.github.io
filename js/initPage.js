@@ -7,8 +7,8 @@ function createNav() {
     document.writeln("            <li class=\"nav-btn\"><a href=\"downloads.html\" target=\"_blank\">下载</a></li>");
     document.writeln("            <li class=\"nav-btn\"><a href=\"https://clear-sea.github.io/blogs/\" target=\"_blank\">博客</a></li>");
     document.writeln("            <li class=\"nav-btn\"><a href=\"about.html\" target=\"_blank\">关于</a></li>");
-    document.writeln("            <li class=\"btn-dark\"><a href=\"javascript:change(`mainLight`,`mainDark`);change(`navLight`,`navDark`);\"></a></li>");
-    document.writeln("            <li class=\"btn-light\"><a href=\"javascript:change(`mainDark`,`mainLight`);change(`navDark`,`navLight`);\"></a></li>");
+    document.writeln("            <li class=\"btn-dark\"><a href=\"javascript:changeToDark();\"></a></li>");
+    document.writeln("            <li class=\"btn-light\"><a href=\"javascript:changeToLight();\"></a></li>");
     document.writeln("        </ul>");
     document.writeln("<!--设置填充部分，防止导航栏遮住内容-->");
     document.writeln("<div style=\'height: 70px;width:100%;\'></div>");

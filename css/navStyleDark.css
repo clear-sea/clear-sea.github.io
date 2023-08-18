@@ -100,13 +100,13 @@
     background-image: url(../images/light.svg);
     background-size: 40px 40px;
     background-repeat: no-repeat;
-    margin: auto;
+    margin: 0px;
     width: 50px;
     filter: invert(100%);
     transition: all 0.2s linear;
 }
 .btn-light:hover {
-    background-color: var(--btnHoverColor);
+    background-color: white;
     transition: all 0.2s linear;
 }
 .btn-light a {
@@ -123,13 +123,13 @@
     background-image: url(../images/dark.svg);
     background-size: 40px 40px;
     background-repeat: no-repeat;
-    margin: auto;
+    margin: 0px;
     width: 50px;
     filter: invert(100%);
     transition: all 0.2s linear;
 }
 .btn-dark:hover {
-    background-color: var(--btnHoverColor);
+    background-color: white;
     transition: all 0.2s linear;
 }
 .btn-dark a {

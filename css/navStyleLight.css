@@ -100,7 +100,7 @@
     background-image: url(../images/light.svg);
     background-size: 40px 40px;
     background-repeat: no-repeat;
-    margin: auto;
+    margin: 0px;
     width: 50px;
     transition: all 0.2s linear;
 }
@@ -122,7 +122,7 @@
     background-image: url(../images/dark.svg);
     background-size: 40px 40px;
     background-repeat: no-repeat;
-    margin: auto;
+    margin: 0px;
     width: 50px;
     transition: all 0.2s linear;
 }
