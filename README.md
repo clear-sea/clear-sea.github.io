@@ -6,10 +6,6 @@
 
 [访问网址](https://clear-sea.github.io/)
 
-# 第三方库
-
-[highlight.js](https://highlightjs.org/)用于博客中的代码高亮
-
 # 其他
 
 本站用GitHub-Pages建成
