@@ -1,73 +1,302 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <!--设置文档默认编码-->
-        <meta charset="UTF-8" name="viewport" content="width=device-width">
-  
-        <!--网页的title-->
-        <title>清澈的海水</title>
-        <link rel="icon" href="images/icon.png">
-        <script src="js/initPage.js"></script>
-        <script src="js/changeStyle.js"></script>
-        <script>importCSS();</script>
-    </head>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ClearSea | 个人网站</title>
+    <link rel="icon" href="images/icon.ico">
+    <link href="https://cdn.bootcdn.net/ajax/libs/font-awesome/6.7.2/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- 加载动画 -->
+    <div class="loader" id="loader">
+        <div class="spinner">
+          <div class="spinner-dot"></div>
+          <div class="spinner-dot"></div>
+          <div class="spinner-dot"></div>
+        </div>
+    </div>
+
+    <!-- 导航栏 -->
+    <nav>
+        <div class="logo">
+            <img src="images/icon.ico" alt="网站图标">
+            <h1>ClearSea</h1>
+        </div>
+        <ul class="nav-links">
+            <li><a href="#home">首页</a></li>
+            <li><a href="#about">关于</a></li>
+            <li><a href="#github">GitHub</a></li>
+            <li><a href="#blog">博客</a></li>
+            <li><a href="#contact">联系</a></li>
+        </ul>
+        <button class="theme-toggle" id="themeToggle">
+            <i class="fas fa-moon"></i>
+        </button>
+    </nav>
+
+    <!-- 欢迎区域 -->
+    <section id="home">
+        <div class="welcome-content">
+            <h2>Hello，我是<span style="color: white;">ClearSea</span></h2>
+            <p>业余计算机技术爱好者，目前是一名高中生</p>
+            <div class="cta-buttons">
+                <a href="#about" class="cta-button">More...</a>
+                <a href="#contact" class="cta-button">Contact</a>
+            </div>
+        </div>
+        <a href="#about" class="scroll-down" style="color: #6dd6ff;text-decoration: none;">
+            <div class="scroll-indicator">
+                <i class="fas fa-chevron-down"></i>
+            </div>
+        </a>
         
-    <body class="main">
-        <!--顶部导航栏-->
-        <script>
-            createNav();
-        </script>
+    </section>
 
-        <!--卡片-->
-        <div class="panel">
-            <p style="text-align:center;font-size:40px;">GitHub成就</p>
+    <!-- 关于我部分 -->
+    <section id="about" class="section">
+        <div class="section-bg"></div>
+        <h2 class="section-title">关于</h2>
+        <div class="about-content animate-on-scroll">
+            <div class="about-text">
+                <p>我是一名业余编程爱好者，自学近5年（但业余时间少）。我的梦想是从事软件开发行业，让爱好变为改变世界的一份力量。</p>
+                <p>我的爱好多种编程语言和框架，包括JavaScript、Python和C++等,对算法知识略知一二。</p>
+                <p>在业余时间，我喜欢参与开源项目，撰写技术博客，并不断探索新技术以保持技术敏锐度。</p>
+                
+                <h3>技能专长</h3>
+                <div class="skills">
+                    <span class="skill-tag">JavaScript</span>
+                    <span class="skill-tag">HTML5</span>
+                    <span class="skill-tag">CSS3</span>
+                    <span class="skill-tag">Python</span>
+                    <span class="skill-tag">C++</span>
+                    <span class="skill-tag">C</span>
+                </div>
+            </div>
+            <div class="about-image">
+                <!-- 代码高亮与现代化代码框，带Mac风格圆点和行号 -->
+                <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism-tomorrow.min.css">
+                <div class="code-snippet mac-code-snippet" style="border-radius: 10px; box-shadow: 0 4px 24px rgba(0,0,0,0.10); overflow: auto; background: #2d2d2d; padding: 0; margin-top: 20px;">
+                    <div class="mac-bar" style="display: flex; align-items: center; height: 32px; padding: 0 16px; border-radius: 10px 10px 0 0; background: #232323;">
+                        <span class="mac-dot" style="width:12px;height:12px;border-radius:50%;background:#ff5f56;display:inline-block;margin-right:6px;"></span>
+                        <span class="mac-dot" style="width:12px;height:12px;border-radius:50%;background:#ffbd2e;display:inline-block;margin-right:6px;"></span>
+                        <span class="mac-dot" style="width:12px;height:12px;border-radius:50%;background:#27c93f;display:inline-block;"></span>
+                    </div>
+                    <pre class="line-numbers" style="margin: 0; border-radius: 0 0 10px 10px; background: #2d2d2d; padding: 1.2em;">
+<code class="language-js">// 简洁高效的代码是我的追求
+function createSolution(problem) {
+    const analysis = analyze(problem);
+    const design = createDesign(analysis);
+    return implement(design);
+}
 
-            <div align="right"> <img src="https://camo.githubusercontent.com/045216ce679fbfcd91ee7f6a8b8216f158313911e24d77252b05d5ceaa425fb7/68747470733a2f2f6769746875622d726561646d652d73747265616b2d73746174732e6865726f6b756170702e636f6d2f3f757365723d636c6561722d736561"/> </div>
+// 热爱开源与技术分享
+async function shareKnowledge() {
+    const blogPost = await writeArticle();
+    openSource(blogPost);
+    return inspireOthers();
+}
+</code></pre>
+                </div>
+                <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/prism.min.js"></script>
+                <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-javascript.min.js"></script>
+                </div>
+            </div>
+        </div>
+    </section>
 
-            <div align="left"> <img src="https://camo.githubusercontent.com/00866e452b18e3cda7a8423649c6f2bd8f7840f19d7eaa2398539e05ad873248/68747470733a2f2f6769746875622d726561646d652d73746174732e76657263656c2e6170702f6170692f746f702d6c616e67732f3f757365726e616d653d636c6561722d73656126686964655f7469746c653d7472756526686964655f626f726465723d74727565266c61796f75743d636f6d70616374266c616e67735f636f756e743d3626746578745f636f6c6f723d3030302669636f6e5f636f6c6f723d6666662662675f636f6c6f723d302c3532666135612c3464666366662c633634646666267468656d653d677261797768697465"/> </div>
+    <!-- GitHub信息部分 -->
+    <section id="github" class="section">
+        <div class="section-bg"></div>
+        <h2 class="section-title">GitHub 信息</h2>
+        <div class="github-stats animate-on-scroll">
+            <div class="stat-card">
+                <i class="fab fa-github"></i>
+                <h4>公开仓库</h4>
+                <div class="number" id="repoCount"></div>
+            </div>
+            <div class="stat-card">
+                <i class="fas fa-users"></i>
+                <h4>关注者</h4>
+                <div class="number" id="followers"></div>
+            </div>
+            <div class="stat-card">
+                <i class="fas fa-star"></i>
+                <h4>Star数</h4>
+                <div class="number" id="stars"></div>
+            </div>
+            <div class="stat-card">
+                <i class="fas fa-code-commit"></i>
+                <h4>贡献次数</h4>
+                <div class="number" id="contributions"></div>
+            </div>
         </div>
         
-        <div style="height: 50px;"></div>
-
-        <!--动态打字-->
-        <div style="margin: auto;" align="center">
-            <!-- https://github.com/DenverCoder1/readme-typing-svg/ -->
-            <svg xmlns='http://www.w3.org/2000/svg'
-            xmlns:xlink='http://www.w3.org/1999/xlink'
-            viewBox='0 0 400 50'
-            style='background-color: #00000000;'
-            width='400px' height='50px'>
-                        <path id='path0'>
-                                    <!-- Single line -->
-                                        <animate id='d0' attributeName='d' begin='0s;d1.end'
-                            dur='5000ms' fill='remove'
-                            values='m0,25 h0 ; m0,25 h400 ; m0,25 h400 ; m0,25 h0' keyTimes='0;0.8;0.8;1' />
-                            </path>
-            <text font-family='"monospace", monospace' fill='orange' font-size='27'
-                dominant-baseline='auto'
-                x='50%' text-anchor='middle'>
-                <textPath xlink:href='#path0'>
-                    print(&quot;Hello, World!&quot;)
-                </textPath>
-            </text>
-                <path id='path1'>
-                                    <!-- Single line -->
-                                        <animate id='d1' attributeName='d' begin='d0.end'
-                            dur='5000ms' fill='remove'
-                            values='m0,25 h0 ; m0,25 h400 ; m0,25 h400 ; m0,25 h0' keyTimes='0;0.8;0.8;1' />
-                            </path>
-            <text font-family='"monospace", monospace' fill='orange' font-size='27'
-                dominant-baseline='auto'
-                x='50%' text-anchor='middle'>
-                <textPath xlink:href='#path1'>
-                    让每一行代码为开源世界贡献！
-                </textPath>
-            </text>
-            </svg>
+        <h3 style="text-align: center; margin: 40px 0 20px; color: var(--primary-color);">精选项目</h3>
+        <div class="card-container">
+            <div class="card animate-on-scroll">
+                <div class="repo-card">
+                    <div class="repo-header">
+                        <a href="#" class="repo-name">clear-sea.github.io</a>
+                        <div class="repo-stats">
+                            <span>★ 4</span>
+                        </div>
+                    </div>
+                    <p class="repo-description">个人网站，展示自我。</p>
+                    <div class="repo-footer">
+                        <div class="repo-language">
+                            <span class="language-color" style="background-color: #ff4545;"></span>
+                            <span>HTML</span>
+                        </div>
+                        <span>更新于 2025.7</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="card animate-on-scroll">
+                <div class="repo-card">
+                    <div class="repo-header">
+                        <a href="#" class="repo-name">Memorise Words</a>
+                        <div class="repo-stats">
+                            <span>★ 1</span>
+                        </div>
+                    </div>
+                    <p class="repo-description">随手写的背单词小程序</p>
+                    <div class="repo-footer">
+                        <div class="repo-language">
+                            <span class="language-color" style="background-color: #3572A5;"></span>
+                            <span>Python</span>
+                        </div>
+                        <span>更新于 2024.7</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="card animate-on-scroll">
+                <div class="repo-card">
+                    <div class="repo-header">
+                        <a href="#" class="repo-name">MineSweeper</a>
+                        <div class="repo-stats">
+                            <span>★ 2</span>
+                        </div>
+                    </div>
+                    <p class="repo-description">C++实现的扫雷游戏。</p>
+                    <div class="repo-footer">
+                        <div class="repo-language">
+                            <span class="language-color" style="background-color: #5af15a;"></span>
+                            <span>C++</span>
+                        </div>
+                        <span>更新于 2023.1</span>
+                    </div>
+                </div>
+            </div>
         </div>
-
-        <!--copyright-->
-        <script>createCopyrightBlock();</script>
         
-    </body>
+        <div style="text-align: center; margin-top: 40px;">
+            <a href="https://github.com/clear-sea/" class="btn" target="_blank">访问我的GitHub主页</a>
+        </div>
+    </section>
+
+    <!-- 博客部分 -->
+    <section id="blog" class="section">
+        <div class="section-bg"></div>
+        <h2 class="section-title">技术博客</h2>
+        <div class="blog-content animate-on-scroll">
+            <div class="blog-card">
+                <div class="blog-icon">
+                    <i class="fas fa-laptop-code"></i>
+                </div>
+                <h3>技术文章与教程</h3>
+                <p>分享Python/C++实践和探索的文章和实用教程。</p>
+            </div>
+            
+            <div class="blog-card">
+                <div class="blog-icon">
+                    <i class="fas fa-lightbulb"></i>
+                </div>
+                <h3>开发经验与见解</h3>
+                <p>记录项目开发中的问题、经验和解决方案。</p>
+            </div>
+            
+            <div class="blog-card">
+                <div class="blog-icon">
+                    <i class="fas fa-rocket"></i>
+                </div>
+                <h3>科普和乐趣</h3>
+                <p>将计算机知识融入生动有趣的小例子中，帮助读者更好地理解和应用这些概念。</p>
+            </div>
+            
+            <div style="text-align: center; margin-top: 40px; width: 100%;">
+                <a href="https://clear-sea.github.io/blogs/" class="btn" target="_blank">阅读我的博客</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 联系部分 -->
+    <section id="contact" class="section">
+        <div class="section-bg"></div>
+        <h2 class="section-title">联系</h2>
+        <div class="contact-content animate-on-scroll">
+            <div class="contact-card">
+                <div class="contact-icon">
+                    <i class="fab fa-github"></i>
+                </div>
+                <h3>GitHub</h3>
+                <p>查看我的开源项目和代码</p>
+                <a href="https://github.com/clear-sea/" target="_blank">访问我的GitHub主页</a>
+            </div>
+            
+            <div class="contact-card">
+                <div class="contact-icon">
+                    <i class="fas fa-envelope"></i>
+                </div>
+                <h3>电子邮件</h3>
+                <p>通过邮件与我联系</p>
+                <a href="mailto:18660775261@163.com">18660775261@163.com</a>
+            </div>
+            
+            <div class="contact-card">
+                <div class="contact-icon">
+                    <i class="fab fa-linkedin"></i>
+                </div>
+                <h3>领英</h3>
+                <p>暂无...</p>
+                <a href="#" target="_blank">暂无LinkedIn...</a>
+            </div>
+            
+            <div class="contact-card">
+                <div class="contact-icon">
+                    <i class="fab fa-twitter"></i>
+                </div>
+                <h3>Twitter</h3>
+                <p>暂无</p>
+                <a href="#" target="_blank">暂无Twitter...</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">
+                <img src="images/icon.ico" alt="网站图标">
+                <h3>Clear Sea</h3>
+            </div>
+            <p style="color: #3572A5;font-size: 1.2rem;"><strong>让每一行代码为开源世界贡献</strong></p>
+            <div class="footer-social">
+                <a href="https://github.com/clear-sea/" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-linkedin"></i></a>
+                <a href="#"><i class="fab fa-dev"></i></a>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>© 2022 ClearSea. 保留所有权利。</p>
+        </div>
+    </footer>
+
+    <!-- 脚本 -->
+    <script src="script.js"></script>
+</body>
 </html>
