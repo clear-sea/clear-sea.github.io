@@ -444,6 +444,7 @@ nav {
 .stat-card {
     background: var(--card-bg);
     backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
     padding: 25px;
     text-align: center;
     box-shadow: 0 5px 15px var(--shadow);
