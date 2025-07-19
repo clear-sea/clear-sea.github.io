@@ -5,14 +5,15 @@
     --secondary-color: #42a5f5;
     --accent-color: #0d47a1;
     --bg-color: #e6f7ff;
-    --card-bg: rgba(255, 255, 255, 0.75);
+    --card-bg: rgba(255, 255, 255, 0.5);
     --text-color: #212121;
     --text-secondary: #424242;
     --shadow: rgba(0, 0, 0, 0.1);
-    --nav-bg: rgba(255, 255, 255, 0.9);
-    --hover-effect: rgba(255, 255, 255, 0.9);
-    --footer-bg: rgba(230, 247, 255, 0.9);
-    --contact-card: #ffffff;
+    --nav-bg: rgba(255, 255, 255, 0.68);
+    --hover-effect: rgba(255, 255, 255, 0.7);
+    --click-effect: rgba(239, 253, 255, 0.9);
+    --footer-bg: rgba(208, 240, 255, 0.9);
+    --contact-card: rgba(255, 255, 255, 0.5);
     --button-text: #0d47a1;
     --button-border: #0d47a1;
 }
@@ -21,16 +22,17 @@
     /* 深色主题变量 */
     --primary-color: #64b5f6;
     --secondary-color: #90caf9;
-    --accent-color: #bb86fc;
+    --accent-color: #5552ff;
     --bg-color: #001529;
-    --card-bg: rgba(30, 30, 30, 0.75);
+    --card-bg: rgba(30, 30, 30, 0.5);
     --text-color: #e0e0e0;
     --text-secondary: #b0b0b0;
     --shadow: rgba(0, 0, 0, 0.3);
-    --nav-bg: rgba(0, 21, 41, 0.9);
-    --hover-effect: rgba(50, 50, 50, 0.8);
+    --nav-bg: rgba(0, 21, 41, 0.68);
+    --hover-effect: rgba(50, 50, 50, 0.7);
+    --click-effect: rgba(0, 15, 29, 0.9);
     --footer-bg: rgba(0, 21, 41, 0.9);
-    --contact-card: rgba(30, 30, 30, 0.9);
+    --contact-card: rgba(30, 30, 30, 0.5);
     --button-text: #90caf9;
     --button-border: #90caf9;
 }
@@ -130,7 +132,9 @@ nav {
     align-items: center;
     padding: 15px 5%;
     background-color: var(--nav-bg);
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    -moz-backdrop-filter: blur(5px);
     z-index: 1000;
     box-shadow: 0 2px 10px var(--shadow);
 }
@@ -264,7 +268,9 @@ nav {
     font-size: 1.1rem;
     font-weight: bold;
     text-decoration: none;
-    backdrop-filter: blur(5px);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    -moz-backdrop-filter: blur(10px);
     transition: all 0.3s ease;
 }
 
@@ -350,7 +356,9 @@ nav {
 
 .card {
     background: var(--card-bg);
-    backdrop-filter: blur(7px);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    -moz-backdrop-filter: blur(10px);
     padding: 30px;
     box-shadow: 0 5px 15px var(--shadow);
     border: 1px solid rgba(255, 255, 255, 0.1);
@@ -361,6 +369,10 @@ nav {
     transform: translateY(-10px);
     box-shadow: 0 15px 30px var(--shadow);
     background: var(--hover-effect);
+}
+
+.card:active {
+    background-color: var(--click-effect);
 }
 
 .card h3 {
@@ -445,6 +457,7 @@ nav {
     background: var(--card-bg);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
+    -moz-backdrop-filter: blur(10px);
     padding: 25px;
     text-align: center;
     box-shadow: 0 5px 15px var(--shadow);
@@ -454,6 +467,10 @@ nav {
 .stat-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 10px 25px var(--shadow);
+}
+
+.stat-card:active {
+    background-color: var(--click-effect);
 }
 
 .stat-card i {
@@ -539,6 +556,9 @@ nav {
     background: transparent;
     border: 2px solid var(--button-border);
     color: var(--button-text);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    -moz-backdrop-filter: blur(10px);
     padding: 10px 25px;
     font-weight: bold;
     text-decoration: none;
@@ -563,6 +583,8 @@ nav {
 .blog-card {
     background: var(--card-bg);
     backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    -moz-backdrop-filter: blur(10px);
     padding: 30px;
     text-align: center;
     box-shadow: 0 5px 15px var(--shadow);
@@ -572,6 +594,10 @@ nav {
 .blog-card:hover {
     transform: translateY(-10px);
     box-shadow: 0 15px 30px var(--shadow);
+}
+
+.blog-card:active {
+    background-color: var(--click-effect);
 }
 
 .blog-icon {
@@ -602,6 +628,8 @@ nav {
 .contact-card {
     background: var(--contact-card);
     backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    -moz-backdrop-filter: blur(10px);
     padding: 30px;
     text-align: center;
     box-shadow: 0 5px 15px var(--shadow);
@@ -611,6 +639,10 @@ nav {
 .contact-card:hover {
     transform: translateY(-10px);
     box-shadow: 0 15px 30px var(--shadow);
+}
+
+.contact-card:active {
+    background-color: var(--click-effect);
 }
 
 .contact-icon {
@@ -744,12 +776,12 @@ footer p {
 
 .animate-on-scroll {
     opacity: 0;
-    transform: translateY(30px);
-    transition: all 0.3s ease;
+    transform: translateY(40px);
+    transition: all 0.8s ease;
 }
 
 .animate-on-scroll.visible {
-    opacity: 0.9;
+    opacity: 1;
     transform: translateY(0);
 }
 

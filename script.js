@@ -6,9 +6,14 @@ window.addEventListener('load', function() {
     }, 800); // 确保加载动画至少显示800ms
 });
 
-// 主题切换
+// 主题切换，默认深色
 const themeToggle = document.getElementById('themeToggle');
 const themeIcon = themeToggle.querySelector('i');
+
+// 默认启用深色主题
+document.body.classList.add('dark-theme');
+themeIcon.classList.remove('fa-moon');
+themeIcon.classList.add('fa-sun');
 
 themeToggle.addEventListener('click', () => {
     document.body.classList.toggle('dark-theme');

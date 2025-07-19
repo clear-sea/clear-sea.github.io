@@ -76,31 +76,27 @@
             </div>
             <div class="about-image">
                 <!-- 代码高亮与现代化代码框，带Mac风格圆点和行号 -->
-                <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism-tomorrow.min.css">
+                <link rel="stylesheet" href="prism/prism.css">
                 <div class="code-snippet mac-code-snippet" style="border-radius: 10px; box-shadow: 0 4px 24px rgba(0,0,0,0.10); overflow: auto; background: #2d2d2d; padding: 0; margin-top: 20px;">
                     <div class="mac-bar" style="display: flex; align-items: center; height: 32px; padding: 0 16px; border-radius: 10px 10px 0 0; background: #232323;">
                         <span class="mac-dot" style="width:12px;height:12px;border-radius:50%;background:#ff5f56;display:inline-block;margin-right:6px;"></span>
                         <span class="mac-dot" style="width:12px;height:12px;border-radius:50%;background:#ffbd2e;display:inline-block;margin-right:6px;"></span>
                         <span class="mac-dot" style="width:12px;height:12px;border-radius:50%;background:#27c93f;display:inline-block;"></span>
                     </div>
-                    <pre class="line-numbers" style="margin: 0; border-radius: 0 0 10px 10px; background: #2d2d2d; padding: 1.2em;">
-<code class="language-js">// 简洁高效的代码是我的追求
-function createSolution(problem) {
-    const analysis = analyze(problem);
-    const design = createDesign(analysis);
-    return implement(design);
-}
+                    <pre class="line-numbers"><code class="language-python"># 简洁高效的代码是我的追求
+def create_solution(problem):
+    analysis = analyze(problem)
+    design = create_design(analysis)
+    return implement(design)
 
-// 热爱开源与技术分享
-async function shareKnowledge() {
-    const blogPost = await writeArticle();
-    openSource(blogPost);
-    return inspireOthers();
-}
+# 热爱开源与技术分享
+async def share_knowledge():
+    blog_post = write_article()
+    open_source(blog_post)
+    return inspire_others()
 </code></pre>
                 </div>
-                <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/prism.min.js"></script>
-                <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-javascript.min.js"></script>
+                <script src="prism/prism.js"></script>
                 </div>
             </div>
         </div>
@@ -134,30 +130,30 @@ async function shareKnowledge() {
         </div>
         
         <h3 style="text-align: center; margin: 40px 0 20px; color: var(--primary-color);">精选项目</h3>
-        <div class="card-container">
-            <div class="card animate-on-scroll">
+        <div class="card-container animate-on-scroll">
+            <div class="card">
                 <div class="repo-card">
                     <div class="repo-header">
-                        <a href="#" class="repo-name">clear-sea.github.io</a>
+                        <a href="https://github.com/clear-sea/class202305" class="repo-name" target="_blank">clear-sea.github.io</a>
                         <div class="repo-stats">
                             <span>★ 5</span>
                         </div>
                     </div>
-                    <p class="repo-description">个人网站，展示自我。</p>
+                    <p class="repo-description">[2023级]高一上六班([2021级]十五班)班站。</p>
                     <div class="repo-footer">
                         <div class="repo-language">
                             <span class="language-color" style="background-color: #ff4545;"></span>
                             <span>HTML</span>
                         </div>
-                        <span>更新于 2025.7</span>
+                        <span>更新于 2025.2</span>
                     </div>
                 </div>
             </div>
             
-            <div class="card animate-on-scroll">
+            <div class="card">
                 <div class="repo-card">
                     <div class="repo-header">
-                        <a href="#" class="repo-name">Memorise Words</a>
+                        <a href="https://github.com/clear-sea/MemoriseWords" class="repo-name" target="_blank">Memorise Words</a>
                         <div class="repo-stats">
                             <span>★ 1</span>
                         </div>
@@ -173,15 +169,15 @@ async function shareKnowledge() {
                 </div>
             </div>
             
-            <div class="card animate-on-scroll">
+            <div class="card">
                 <div class="repo-card">
                     <div class="repo-header">
-                        <a href="#" class="repo-name">MineSweeper</a>
+                        <a href="https://github.com/clear-sea/MineSweeper" class="repo-name" target="_blank">MineSweeper</a>
                         <div class="repo-stats">
                             <span>★ 2</span>
                         </div>
                     </div>
-                    <p class="repo-description">C++实现的扫雷游戏。</p>
+                    <p class="repo-description">C++结合EasyX实现的扫雷游戏。</p>
                     <div class="repo-footer">
                         <div class="repo-language">
                             <span class="language-color" style="background-color: #5af15a;"></span>
@@ -223,7 +219,7 @@ async function shareKnowledge() {
                 <div class="blog-icon">
                     <i class="fas fa-rocket"></i>
                 </div>
-                <h3>科普和乐趣</h3>
+                <h3>科普文章和乐趣</h3>
                 <p>将计算机知识融入生动有趣的小例子中，帮助读者更好地理解和应用这些概念。</p>
             </div>
             
@@ -260,7 +256,7 @@ async function shareKnowledge() {
                 <div class="contact-icon">
                     <i class="fab fa-linkedin"></i>
                 </div>
-                <h3>领英</h3>
+                <h3>LinkedIn</h3>
                 <p>暂无...</p>
                 <a href="#" target="_blank">暂无LinkedIn...</a>
             </div>
