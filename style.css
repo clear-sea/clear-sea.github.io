@@ -23,7 +23,7 @@
     /* 深色主题变量 */
     --primary-color: #64b5f6;
     --secondary-color: #90caf9;
-    --accent-color: #5552ff;
+    --accent-color: #0066ff;
     --bg-color: #001529;
     --card-bg: rgba(30, 30, 30, 0.5);
     --text-color: #e0e0e0;
@@ -469,6 +469,7 @@ nav {
 .stat-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 10px 25px var(--shadow);
+    background: var(--hover-effect);
 }
 
 .stat-card:active {
@@ -496,6 +497,7 @@ nav {
 .repo-card {
     display: flex;
     flex-direction: column;
+    cursor: pointer;
     height: 100%;
 }
 
@@ -596,6 +598,7 @@ nav {
 .blog-card:hover {
     transform: translateY(-10px);
     box-shadow: 0 15px 30px var(--shadow);
+    background: var(--hover-effect);
 }
 
 .blog-card:active {
@@ -641,6 +644,7 @@ nav {
 .contact-card:hover {
     transform: translateY(-10px);
     box-shadow: 0 15px 30px var(--shadow);
+    background-color: var(--hover-effect);
 }
 
 .contact-card:active {

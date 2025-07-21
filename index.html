@@ -35,7 +35,7 @@
         </div>
         <ul class="nav-links">
             <li><a href="#home" tabindex="0">首页</a></li>
-            <li><a href="#about" tabindex="0">关于</a></li>
+            <li><a href="#about" tabindex="0">关于我</a></li>
             <li><a href="#github" tabindex="0">GitHub</a></li>
             <li><a href="#blog" tabindex="0">博客</a></li>
             <li><a href="#contact" tabindex="0">联系</a></li>
@@ -66,7 +66,7 @@
         <!-- 关于我部分 -->
         <section id="about" class="section">
             <div class="section-bg"></div>
-            <h2 class="section-title">关于</h2>
+            <h2 class="section-title">关于我</h2>
             <div class="about-content animate-on-scroll">
                 <div class="about-text">
                     <p>我是一名业余编程爱好者，自学近5年（但业余时间少）。我的梦想是从事软件开发行业，让爱好变为改变世界的一份力量。</p>
@@ -93,17 +93,17 @@
                             <span class="mac-dot" style="width:12px;height:12px;border-radius:50%;background:#27c93f;display:inline-block;"></span>
                         </div>
                         <pre class="line-numbers"><code class="language-python"># 简洁高效的代码是我的追求
-    def create_solution(problem):
-        analysis = analyze(problem)
-        design = create_design(analysis)
-        return implement(design)
+def create_solution(problem):
+    analysis = analyze(problem)
+    design = create_design(analysis)
+    return implement(design)
 
-    # 热爱开源与技术分享
-    async def share_knowledge():
-        blog_post = write_article()
-        open_source(blog_post)
-        return inspire_others()
-    </code></pre>
+# 热爱开源与技术分享
+async def share_knowledge():
+    blog_post = write_article()
+    open_source(blog_post)
+    return inspire_others()
+</code></pre>
                     </div>
                     <script src="prism/prism.js"></script>
                     </div>
@@ -114,26 +114,26 @@
         <!-- GitHub信息部分 -->
         <section id="github" class="section">
             <div class="section-bg"></div>
-            <h2 class="section-title">GitHub 信息</h2>
+            <h2 class="section-title">GitHub信息</h2>
             <div class="github-stats animate-on-scroll">
                 <div class="stat-card">
                     <i class="fab fa-github"></i>
-                    <h4>公开仓库</h4>
+                    <h4>repoCount</h4>
                     <div class="number" id="repoCount"></div>
                 </div>
                 <div class="stat-card">
                     <i class="fas fa-users"></i>
-                    <h4>关注者</h4>
+                    <h4>followers</h4>
                     <div class="number" id="followers"></div>
                 </div>
                 <div class="stat-card">
                     <i class="fas fa-star"></i>
-                    <h4>Star数</h4>
+                    <h4>stars</h4>
                     <div class="number" id="stars"></div>
                 </div>
                 <div class="stat-card">
                     <i class="fas fa-code-commit"></i>
-                    <h4>贡献次数</h4>
+                    <h4>contributions</h4>
                     <div class="number" id="contributions"></div>
                 </div>
             </div>
@@ -148,7 +148,7 @@
                                 <span>★ 5</span>
                             </div>
                         </div>
-                        <p class="repo-description">[2023级]高一上六班([2021级]十五班)班站。</p>
+                        <p class="repo-description">2023级5班([2021级]十五班)班站。</p>
                         <div class="repo-footer">
                             <div class="repo-language">
                                 <span class="language-color" style="background-color: #ff4545;"></span>
@@ -199,7 +199,7 @@
             </div>
             
             <div style="text-align: center; margin-top: 40px;">
-                <a href="https://github.com/clear-sea/" class="btn" target="_blank">访问我的GitHub主页</a>
+                <a href="https://github.com/clear-sea/" class="btn" target="_blank">更多详见GitHub主页</a>
             </div>
         </section>
 
@@ -213,7 +213,7 @@
                         <i class="fas fa-laptop-code"></i>
                     </div>
                     <h3>技术文章与教程</h3>
-                    <p>分享Python/C++实践和探索的文章和实用教程。</p>
+                    <p>分享Python/C++等实践和探索的文章和实用教程。</p>
                 </div>
                 
                 <div class="blog-card">
@@ -234,6 +234,44 @@
                 
                 <div style="text-align: center; margin-top: 40px; width: 100%;">
                     <a href="https://clear-sea.github.io/blogs/" class="btn" target="_blank">阅读我的博客</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- 关于本网站 -->
+        <section id="about-site" class="section">
+            <div class="section-bg"></div>
+            <h2 class="section-title">关于本网站</h2>
+            <div class="about-site-cards animate-on-scroll card-container">
+                <!-- 建站目的卡片 -->
+                <div class="card">
+                    <div class="about-site-card">
+                    <div class="card-icon" style="font-size: 2.5rem; color: #6dd6ff; margin-bottom: 12px;">
+                        <i class="fas fa-bullseye"></i>
+                    </div>
+                    <h3>建站目的</h3>
+                    <p>展现自我，分享关于编程知识与经验的技术博客，促进技术交流。</p>
+                    </div>
+                </div>
+                <!-- 使用技术卡片 -->
+                <div class="card">
+                    <div class="about-site-card">
+                    <div class="card-icon" style="font-size: 2.5rem; color: #3572A5; margin-bottom: 12px;">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <h3>使用技术</h3>
+                    <p>HTML5、CSS3、JavaScript，响应式设计，代码高亮（Prism.js）。</p>
+                    </div>
+                </div>
+                <!-- 第三方库卡片 -->
+                <div class="card">
+                    <div class="about-site-card">
+                    <div class="card-icon" style="font-size: 2.5rem; color: #ffbd2e; margin-bottom: 12px;">
+                        <i class="fas fa-cubes"></i>
+                    </div>
+                    <h3>第三方库</h3>
+                    <p>Font Awesome 图标库、Prism.js 代码高亮、BootCDN 加速。</p>
+                    </div>
                 </div>
             </div>
         </section>
