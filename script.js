@@ -62,11 +62,11 @@ window.addEventListener('scroll', function() {
 
 // 预加载所有背景图片
 const bgImages = [
-    'images/homeBG.jpg',
-    'images/bg1.jpg',
-    'images/bg2.jpg',
-    'images/bg3.jpg',
-    'images/bg4.jpg'
+    'images/homeBG.webp',
+    'images/bg1.webp',
+    'images/bg2.webp',
+    'images/bg3.webp',
+    'images/bg4.webp'
 ];
 
 bgImages.forEach(img => {

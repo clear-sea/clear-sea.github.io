@@ -4,287 +4,297 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ClearSea | 清澈的海水</title>
+
+    <meta name="description" content="ClearSea的个人主页，展示编程技能、开源项目、技术博客与联系方式。">
+    <meta name="keywords" content="ClearSea, 编程, 开源, 技术博客, Python, C++, JavaScript, 高中生, 个人主页">
+    <link rel="canonical" href="https://clear-sea.github.io/">
+    <meta property="og:title" content="ClearSea | 清澈的海水">
+    <meta property="og:description" content="ClearSea的个人主页，展示编程技能、开源项目、技术博客与联系方式。">
+    <meta property="og:image" content="images/icon.ico">
+    <meta property="og:url" content="https://clear-sea.github.io/">
+
     <link rel="icon" href="images/icon.ico">
     <link href="https://cdn.bootcdn.net/ajax/libs/font-awesome/6.7.2/css/all.min.css" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <!-- 加载动画 -->
-    <div class="loader" id="loader">
-        <div class="spinner">
-          <div class="spinner-dot"></div>
-          <div class="spinner-dot"></div>
-          <div class="spinner-dot"></div>
+    <div class="loader" id="loader" aria-label="页面加载中" role="status">
+        <div class="spinner" aria-hidden="true">
+            <div class="spinner-dot"></div>
+            <div class="spinner-dot"></div>
+            <div class="spinner-dot"></div>
         </div>
     </div>
 
     <!-- 导航栏 -->
-    <nav>
+    <nav aria-label="主导航">
         <div class="logo">
-            <img src="images/icon.ico" alt="网站图标">
+            <img src="images/icon.ico" alt="ClearSea网站图标" />
             <h1>ClearSea</h1>
         </div>
         <ul class="nav-links">
-            <li><a href="#home">首页</a></li>
-            <li><a href="#about">关于</a></li>
-            <li><a href="#github">GitHub</a></li>
-            <li><a href="#blog">博客</a></li>
-            <li><a href="#contact">联系</a></li>
+            <li><a href="#home" tabindex="0">首页</a></li>
+            <li><a href="#about" tabindex="0">关于</a></li>
+            <li><a href="#github" tabindex="0">GitHub</a></li>
+            <li><a href="#blog" tabindex="0">博客</a></li>
+            <li><a href="#contact" tabindex="0">联系</a></li>
         </ul>
-        <button class="theme-toggle" id="themeToggle">
-            <i class="fas fa-moon"></i>
+        <button class="theme-toggle" id="themeToggle" aria-label="切换主题">
+            <i class="fas fa-moon" aria-hidden="true"></i>
         </button>
     </nav>
 
     <!-- 欢迎区域 -->
-    <section id="home">
-        <div class="welcome-content">
-            <h2>Hello，我是<span style="color: white;">ClearSea</span></h2>
-            <p>业余计算机技术爱好者，目前是一名高中生</p>
-            <div class="cta-buttons">
-                <a href="#about" class="cta-button">More...</a>
-                <a href="#contact" class="cta-button">Contact</a>
+    <main id="main-content">
+        <section id="home" aria-labelledby="home-title">
+            <div class="welcome-content">
+                <h2 id="home-title">Hello，我是<span style="color: white;">ClearSea</span></h2>
+                <p>业余计算机技术爱好者，目前是一名高中生</p>
+                <div class="cta-buttons">
+                    <a href="#about" class="cta-button" tabindex="0">More...</a>
+                    <a href="#contact" class="cta-button" tabindex="0">Contact</a>
+                </div>
             </div>
-        </div>
-        <a href="#about" class="scroll-down" style="color: #6dd6ff;text-decoration: none;">
-            <div class="scroll-indicator">
-                <i class="fas fa-chevron-down"></i>
-            </div>
-        </a>
-        
-    </section>
+            <a href="#about" class="scroll-down" style="color: #6dd6ff;text-decoration: none;" aria-label="滚动到关于我部分">
+                <div class="scroll-indicator">
+                    <i class="fas fa-chevron-down" aria-hidden="true"></i>
+                </div>
+            </a>
+        </section>
 
-    <!-- 关于我部分 -->
-    <section id="about" class="section">
-        <div class="section-bg"></div>
-        <h2 class="section-title">关于</h2>
-        <div class="about-content animate-on-scroll">
-            <div class="about-text">
-                <p>我是一名业余编程爱好者，自学近5年（但业余时间少）。我的梦想是从事软件开发行业，让爱好变为改变世界的一份力量。</p>
-                <p>我的爱好多种编程语言和框架，包括JavaScript、Python和C++等,对算法知识略知一二。</p>
-                <p>在业余时间，我喜欢参与开源项目，撰写技术博客，并不断探索新技术以保持技术敏锐度。</p>
-                
-                <h3>技能专长</h3>
-                <div class="skills">
-                    <span class="skill-tag">JavaScript</span>
-                    <span class="skill-tag">HTML5</span>
-                    <span class="skill-tag">CSS3</span>
-                    <span class="skill-tag">Python</span>
-                    <span class="skill-tag">C++</span>
-                    <span class="skill-tag">C</span>
-                </div>
-            </div>
-            <div class="about-image">
-                <!-- 代码高亮与现代化代码框，带Mac风格圆点和行号 -->
-                <link rel="stylesheet" href="prism/prism.css">
-                <div class="code-snippet mac-code-snippet" style="border-radius: 10px; box-shadow: 0 4px 24px rgba(0,0,0,0.10); overflow: auto; background: #2d2d2d; padding: 0; margin-top: 20px;">
-                    <div class="mac-bar" style="display: flex; align-items: center; height: 32px; padding: 0 16px; border-radius: 10px 10px 0 0; background: #232323;">
-                        <span class="mac-dot" style="width:12px;height:12px;border-radius:50%;background:#ff5f56;display:inline-block;margin-right:6px;"></span>
-                        <span class="mac-dot" style="width:12px;height:12px;border-radius:50%;background:#ffbd2e;display:inline-block;margin-right:6px;"></span>
-                        <span class="mac-dot" style="width:12px;height:12px;border-radius:50%;background:#27c93f;display:inline-block;"></span>
+        <!-- 关于我部分 -->
+        <section id="about" class="section">
+            <div class="section-bg"></div>
+            <h2 class="section-title">关于</h2>
+            <div class="about-content animate-on-scroll">
+                <div class="about-text">
+                    <p>我是一名业余编程爱好者，自学近5年（但业余时间少）。我的梦想是从事软件开发行业，让爱好变为改变世界的一份力量。</p>
+                    <p>我的爱好多种编程语言和框架，包括JavaScript、Python和C++等,对算法知识略知一二。</p>
+                    <p>在业余时间，我喜欢参与开源项目，撰写技术博客，并不断探索新技术以保持技术敏锐度。</p>
+                    
+                    <h3>技能专长</h3>
+                    <div class="skills">
+                        <span class="skill-tag">JavaScript</span>
+                        <span class="skill-tag">HTML5</span>
+                        <span class="skill-tag">CSS3</span>
+                        <span class="skill-tag">Python</span>
+                        <span class="skill-tag">C++</span>
+                        <span class="skill-tag">C</span>
                     </div>
-                    <pre class="line-numbers"><code class="language-python"># 简洁高效的代码是我的追求
-def create_solution(problem):
-    analysis = analyze(problem)
-    design = create_design(analysis)
-    return implement(design)
+                </div>
+                <div class="about-image">
+                    <!-- 代码高亮与现代化代码框，带Mac风格圆点和行号 -->
+                    <link rel="stylesheet" href="prism/prism.css">
+                    <div class="code-snippet mac-code-snippet" style="border-radius: 10px; box-shadow: 0 4px 24px rgba(0,0,0,0.10); overflow: auto; background: #2d2d2d; padding: 0; margin-top: 20px;">
+                        <div class="mac-bar" style="display: flex; align-items: center; height: 32px; padding: 0 16px; border-radius: 10px 10px 0 0; background: #232323;">
+                            <span class="mac-dot" style="width:12px;height:12px;border-radius:50%;background:#ff5f56;display:inline-block;margin-right:6px;"></span>
+                            <span class="mac-dot" style="width:12px;height:12px;border-radius:50%;background:#ffbd2e;display:inline-block;margin-right:6px;"></span>
+                            <span class="mac-dot" style="width:12px;height:12px;border-radius:50%;background:#27c93f;display:inline-block;"></span>
+                        </div>
+                        <pre class="line-numbers"><code class="language-python"># 简洁高效的代码是我的追求
+    def create_solution(problem):
+        analysis = analyze(problem)
+        design = create_design(analysis)
+        return implement(design)
 
-# 热爱开源与技术分享
-async def share_knowledge():
-    blog_post = write_article()
-    open_source(blog_post)
-    return inspire_others()
-</code></pre>
-                </div>
-                <script src="prism/prism.js"></script>
+    # 热爱开源与技术分享
+    async def share_knowledge():
+        blog_post = write_article()
+        open_source(blog_post)
+        return inspire_others()
+    </code></pre>
+                    </div>
+                    <script src="prism/prism.js"></script>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- GitHub信息部分 -->
-    <section id="github" class="section">
-        <div class="section-bg"></div>
-        <h2 class="section-title">GitHub 信息</h2>
-        <div class="github-stats animate-on-scroll">
-            <div class="stat-card">
-                <i class="fab fa-github"></i>
-                <h4>公开仓库</h4>
-                <div class="number" id="repoCount"></div>
-            </div>
-            <div class="stat-card">
-                <i class="fas fa-users"></i>
-                <h4>关注者</h4>
-                <div class="number" id="followers"></div>
-            </div>
-            <div class="stat-card">
-                <i class="fas fa-star"></i>
-                <h4>Star数</h4>
-                <div class="number" id="stars"></div>
-            </div>
-            <div class="stat-card">
-                <i class="fas fa-code-commit"></i>
-                <h4>贡献次数</h4>
-                <div class="number" id="contributions"></div>
-            </div>
-        </div>
-        
-        <h3 style="text-align: center; margin: 40px 0 20px; color: var(--primary-color);">精选项目</h3>
-        <div class="card-container animate-on-scroll">
-            <div class="card">
-                <div class="repo-card">
-                    <div class="repo-header">
-                        <a href="https://github.com/clear-sea/class202305" class="repo-name" target="_blank">clear-sea.github.io</a>
-                        <div class="repo-stats">
-                            <span>★ 5</span>
-                        </div>
-                    </div>
-                    <p class="repo-description">[2023级]高一上六班([2021级]十五班)班站。</p>
-                    <div class="repo-footer">
-                        <div class="repo-language">
-                            <span class="language-color" style="background-color: #ff4545;"></span>
-                            <span>HTML</span>
-                        </div>
-                        <span>更新于 2025.2</span>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="card">
-                <div class="repo-card">
-                    <div class="repo-header">
-                        <a href="https://github.com/clear-sea/MemoriseWords" class="repo-name" target="_blank">Memorise Words</a>
-                        <div class="repo-stats">
-                            <span>★ 1</span>
-                        </div>
-                    </div>
-                    <p class="repo-description">随手写的背单词小程序</p>
-                    <div class="repo-footer">
-                        <div class="repo-language">
-                            <span class="language-color" style="background-color: #3572A5;"></span>
-                            <span>Python</span>
-                        </div>
-                        <span>更新于 2024.7</span>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="card">
-                <div class="repo-card">
-                    <div class="repo-header">
-                        <a href="https://github.com/clear-sea/MineSweeper" class="repo-name" target="_blank">MineSweeper</a>
-                        <div class="repo-stats">
-                            <span>★ 2</span>
-                        </div>
-                    </div>
-                    <p class="repo-description">C++结合EasyX实现的扫雷游戏。</p>
-                    <div class="repo-footer">
-                        <div class="repo-language">
-                            <span class="language-color" style="background-color: #5af15a;"></span>
-                            <span>C++</span>
-                        </div>
-                        <span>更新于 2023.1</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-        
-        <div style="text-align: center; margin-top: 40px;">
-            <a href="https://github.com/clear-sea/" class="btn" target="_blank">访问我的GitHub主页</a>
-        </div>
-    </section>
-
-    <!-- 博客部分 -->
-    <section id="blog" class="section">
-        <div class="section-bg"></div>
-        <h2 class="section-title">技术博客</h2>
-        <div class="blog-content animate-on-scroll">
-            <div class="blog-card">
-                <div class="blog-icon">
-                    <i class="fas fa-laptop-code"></i>
-                </div>
-                <h3>技术文章与教程</h3>
-                <p>分享Python/C++实践和探索的文章和实用教程。</p>
-            </div>
-            
-            <div class="blog-card">
-                <div class="blog-icon">
-                    <i class="fas fa-lightbulb"></i>
-                </div>
-                <h3>开发经验与见解</h3>
-                <p>记录项目开发中的问题、经验和解决方案。</p>
-            </div>
-            
-            <div class="blog-card">
-                <div class="blog-icon">
-                    <i class="fas fa-rocket"></i>
-                </div>
-                <h3>科普文章和乐趣</h3>
-                <p>将计算机知识融入生动有趣的小例子中，帮助读者更好地理解和应用这些概念。</p>
-            </div>
-            
-            <div style="text-align: center; margin-top: 40px; width: 100%;">
-                <a href="https://clear-sea.github.io/blogs/" class="btn" target="_blank">阅读我的博客</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- 联系部分 -->
-    <section id="contact" class="section">
-        <div class="section-bg"></div>
-        <h2 class="section-title">联系</h2>
-        <div class="contact-content animate-on-scroll">
-            <div class="contact-card">
-                <div class="contact-icon">
+        <!-- GitHub信息部分 -->
+        <section id="github" class="section">
+            <div class="section-bg"></div>
+            <h2 class="section-title">GitHub 信息</h2>
+            <div class="github-stats animate-on-scroll">
+                <div class="stat-card">
                     <i class="fab fa-github"></i>
+                    <h4>公开仓库</h4>
+                    <div class="number" id="repoCount"></div>
                 </div>
-                <h3>GitHub</h3>
-                <p>查看我的开源项目和代码</p>
-                <a href="https://github.com/clear-sea/" target="_blank">访问我的GitHub主页</a>
+                <div class="stat-card">
+                    <i class="fas fa-users"></i>
+                    <h4>关注者</h4>
+                    <div class="number" id="followers"></div>
+                </div>
+                <div class="stat-card">
+                    <i class="fas fa-star"></i>
+                    <h4>Star数</h4>
+                    <div class="number" id="stars"></div>
+                </div>
+                <div class="stat-card">
+                    <i class="fas fa-code-commit"></i>
+                    <h4>贡献次数</h4>
+                    <div class="number" id="contributions"></div>
+                </div>
             </div>
             
-            <div class="contact-card">
-                <div class="contact-icon">
-                    <i class="fas fa-envelope"></i>
+            <h3 style="text-align: center; margin: 40px 0 20px; color: var(--primary-color);">精选项目</h3>
+            <div class="card-container animate-on-scroll">
+                <div class="card">
+                    <div class="repo-card">
+                        <div class="repo-header">
+                            <a href="https://github.com/clear-sea/class202305" class="repo-name" target="_blank">clear-sea.github.io</a>
+                            <div class="repo-stats">
+                                <span>★ 5</span>
+                            </div>
+                        </div>
+                        <p class="repo-description">[2023级]高一上六班([2021级]十五班)班站。</p>
+                        <div class="repo-footer">
+                            <div class="repo-language">
+                                <span class="language-color" style="background-color: #ff4545;"></span>
+                                <span>HTML</span>
+                            </div>
+                            <span>更新于 2025.2</span>
+                        </div>
+                    </div>
                 </div>
-                <h3>电子邮件</h3>
-                <p>通过邮件与我联系</p>
-                <a href="mailto:18660775261@163.com">18660775261@163.com</a>
+                
+                <div class="card">
+                    <div class="repo-card">
+                        <div class="repo-header">
+                            <a href="https://github.com/clear-sea/MemoriseWords" class="repo-name" target="_blank">Memorise Words</a>
+                            <div class="repo-stats">
+                                <span>★ 1</span>
+                            </div>
+                        </div>
+                        <p class="repo-description">随手写的背单词小程序</p>
+                        <div class="repo-footer">
+                            <div class="repo-language">
+                                <span class="language-color" style="background-color: #3572A5;"></span>
+                                <span>Python</span>
+                            </div>
+                            <span>更新于 2024.7</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div class="repo-card">
+                        <div class="repo-header">
+                            <a href="https://github.com/clear-sea/MineSweeper" class="repo-name" target="_blank">MineSweeper</a>
+                            <div class="repo-stats">
+                                <span>★ 2</span>
+                            </div>
+                        </div>
+                        <p class="repo-description">C++结合EasyX实现的扫雷游戏。</p>
+                        <div class="repo-footer">
+                            <div class="repo-language">
+                                <span class="language-color" style="background-color: #5af15a;"></span>
+                                <span>C++</span>
+                            </div>
+                            <span>更新于 2023.1</span>
+                        </div>
+                    </div>
+                </div>
             </div>
             
-            <div class="contact-card">
-                <div class="contact-icon">
-                    <i class="fab fa-linkedin"></i>
-                </div>
-                <h3>LinkedIn</h3>
-                <p>暂无...</p>
-                <a href="#" target="_blank">暂无LinkedIn...</a>
+            <div style="text-align: center; margin-top: 40px;">
+                <a href="https://github.com/clear-sea/" class="btn" target="_blank">访问我的GitHub主页</a>
             </div>
-            
-            <div class="contact-card">
-                <div class="contact-icon">
-                    <i class="fab fa-twitter"></i>
+        </section>
+
+        <!-- 博客部分 -->
+        <section id="blog" class="section">
+            <div class="section-bg"></div>
+            <h2 class="section-title">技术博客</h2>
+            <div class="blog-content animate-on-scroll">
+                <div class="blog-card">
+                    <div class="blog-icon">
+                        <i class="fas fa-laptop-code"></i>
+                    </div>
+                    <h3>技术文章与教程</h3>
+                    <p>分享Python/C++实践和探索的文章和实用教程。</p>
                 </div>
-                <h3>Twitter</h3>
-                <p>暂无</p>
-                <a href="#" target="_blank">暂无Twitter...</a>
+                
+                <div class="blog-card">
+                    <div class="blog-icon">
+                        <i class="fas fa-lightbulb"></i>
+                    </div>
+                    <h3>开发经验与见解</h3>
+                    <p>记录项目开发中的问题、经验和解决方案。</p>
+                </div>
+                
+                <div class="blog-card">
+                    <div class="blog-icon">
+                        <i class="fas fa-rocket"></i>
+                    </div>
+                    <h3>科普文章和乐趣</h3>
+                    <p>将计算机知识融入生动有趣的小例子中，帮助读者更好地理解和应用这些概念。</p>
+                </div>
+                
+                <div style="text-align: center; margin-top: 40px; width: 100%;">
+                    <a href="https://clear-sea.github.io/blogs/" class="btn" target="_blank">阅读我的博客</a>
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
+
+        <!-- 联系部分 -->
+        <section id="contact" class="section">
+            <div class="section-bg"></div>
+            <h2 class="section-title">联系</h2>
+            <div class="contact-content animate-on-scroll">
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <i class="fab fa-github"></i>
+                    </div>
+                    <h3>GitHub</h3>
+                    <p>查看我的开源项目和代码</p>
+                    <a href="https://github.com/clear-sea/" target="_blank">访问我的GitHub主页</a>
+                </div>
+                
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <h3>电子邮件</h3>
+                    <p>通过邮件与我联系</p>
+                    <a href="mailto:18660775261@163.com">18660775261@163.com</a>
+                </div>
+                
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <i class="fab fa-linkedin"></i>
+                    </div>
+                    <h3>LinkedIn</h3>
+                    <p>暂无...</p>
+                    <a href="#" target="_blank">暂无LinkedIn...</a>
+                </div>
+                
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <i class="fab fa-twitter"></i>
+                    </div>
+                    <h3>Twitter</h3>
+                    <p>暂无</p>
+                    <a href="#" target="_blank">暂无Twitter...</a>
+                </div>
+            </div>
+        </section>
+    </main>
 
     <!-- 页脚 -->
     <footer>
         <div class="footer-content">
             <div class="footer-logo">
-                <img src="images/icon.ico" alt="网站图标">
+                <img src="images/icon.ico" alt="ClearSea网站图标" />
                 <h3>Clear Sea</h3>
             </div>
             <p style="color: #3572A5;font-size: 1.2rem;"><strong>让每一行代码为开源世界贡献</strong></p>
-            <div class="footer-social">
-                <a href="https://github.com/clear-sea/" target="_blank"><i class="fab fa-github"></i></a>
-                <a href="#"><i class="fab fa-twitter"></i></a>
-                <a href="#"><i class="fab fa-linkedin"></i></a>
-                <a href="#"><i class="fab fa-dev"></i></a>
+            <div class="footer-social" aria-label="社交链接">
+                <a href="https://github.com/clear-sea/" target="_blank" aria-label="GitHub主页"><i class="fab fa-github" aria-hidden="true"></i></a>
+                <a href="#" aria-label="Twitter"><i class="fab fa-twitter" aria-hidden="true"></i></a>
+                <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin" aria-hidden="true"></i></a>
+                <a href="#" aria-label="Dev社区"><i class="fab fa-dev" aria-hidden="true"></i></a>
             </div>
         </div>
         <div class="copyright">

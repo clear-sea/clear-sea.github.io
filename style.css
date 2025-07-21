@@ -222,7 +222,7 @@ nav {
 /* 欢迎区域样式 */
 #home {
     height: 100vh;
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)), url('images/homeBG.jpg') no-repeat center center/cover;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)), url('images/homeBG.webp') no-repeat center center/cover;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -317,19 +317,19 @@ nav {
 }
 
 #about .section-bg {
-    background-image: url('images/bg1.jpg');
+    background-image: url('images/bg1.webp');
 }
 
 #github .section-bg {
-    background-image: url('images/bg2.jpg');
+    background-image: url('images/bg2.webp');
 }
 
 #blog .section-bg {
-    background-image: url('images/bg3.jpg');
+    background-image: url('images/bg3.webp');
 }
 
 #contact .section-bg {
-    background-image: url('images/bg4.jpg');
+    background-image: url('images/bg4.webp');
 }
 
 .section-title {
