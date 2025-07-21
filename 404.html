@@ -2,7 +2,7 @@
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
-    <title>404 - 页面未找到 | ClearSea</title>
+    <title>404-页面未找到 | ClearSea清澈的海水</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="prism/prism.css">
@@ -107,7 +107,10 @@
                 <img src="images/icon.ico" alt="Logo" />
                 <h3>清澈的海水</h3>
             </div>
-            <p style="color: #ffffffd8;">© 2025 ClearSea. 保留所有权利。</p>
+            <p style="color: #ffffffd8;">© 2022–<span id="currentYear"></span> ClearSea. 保留所有权利。</p>
+            <script>
+                document.getElementById('currentYear').textContent = new Date().getFullYear();
+            </script>
         </div>
     </footer>
     <script src="prism/prism.js"></script>

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ClearSea | 个人网站</title>
+    <title>ClearSea | 清澈的海水</title>
     <link rel="icon" href="images/icon.ico">
     <link href="https://cdn.bootcdn.net/ajax/libs/font-awesome/6.7.2/css/all.min.css" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
@@ -288,7 +288,10 @@ async def share_knowledge():
             </div>
         </div>
         <div class="copyright">
-            <p>© 2022 ClearSea. 保留所有权利。</p>
+            <p>© 2022–<span id="currentYear"></span> ClearSea. 保留所有权利。</p>
+            <script>
+                document.getElementById('currentYear').textContent = new Date().getFullYear();
+            </script>
         </div>
     </footer>
 

@@ -16,6 +16,7 @@
     --contact-card: rgba(255, 255, 255, 0.5);
     --button-text: #0d47a1;
     --button-border: #0d47a1;
+    --dividing-line-color: rgba(0, 0, 0, 0.1);
 }
 
 .dark-theme {
@@ -35,6 +36,7 @@
     --contact-card: rgba(30, 30, 30, 0.5);
     --button-text: #90caf9;
     --button-border: #90caf9;
+    --dividing-line-color: rgba(255, 255, 255, 0.1);
 }
 
 /* 基础样式 */
@@ -694,7 +696,7 @@ nav {
 footer {
     background: var(--footer-bg);
     padding: 60px 5% 30px;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    border-top: 1px solid var(--dividing-line-color);
 }
 
 .footer-content {
@@ -757,7 +759,7 @@ footer p {
 .copyright {
     text-align: center;
     padding-top: 30px;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    border-top: 1px solid var(--dividing-line-color);
     color: var(--text-secondary);
     font-size: 0.9rem;
 }
