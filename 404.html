@@ -2,15 +2,26 @@
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
-    <title>404 - 页面未找到|ClearSea</title>
+    <title>404 - 页面未找到 | ClearSea</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="prism/prism.css">
     <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            overflow: hidden; /* 禁止滚动 */
+        }
         body {
             min-height: 100vh;
             display: flex;
             flex-direction: column;
             background: var(--bg-color);
+            background-image: url('https://bing.img.run/uhd.php');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
         }
         .notfound-container {
             flex: 1;
@@ -20,6 +31,8 @@
             align-items: center;
             text-align: center;
             min-height: 80vh;
+            z-index: 1;
+            position: relative;
         }
         .notfound-title {
             font-size: 7rem;
@@ -31,8 +44,12 @@
         }
         .notfound-desc {
             font-size: 1.5rem;
-            color: var(--text-secondary);
+            color: var(--bg-color);
+            padding: 0.2em 0.8em;
+            border-radius: 6px;
             margin-bottom: 40px;
+            text-shadow: 0 2px 8px rgba(0,0,0,0.15);
+            display: inline-block;
         }
         .notfound-btn {
             display: inline-block;
@@ -42,9 +59,10 @@
             padding: 12px 36px;
             font-size: 1.1rem;
             font-weight: bold;
-            border-radius: 30px;
+            border-radius: 0;
             text-decoration: none;
             transition: all 0.3s;
+            margin-top: 20px;
         }
         .notfound-btn:hover {
             background: var(--primary-color);
@@ -52,36 +70,33 @@
             box-shadow: 0 5px 15px var(--shadow);
             transform: translateY(-3px);
         }
-        .notfound-mac-bar {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            height: 32px;
-            margin-bottom: 24px;
-        }
-        .notfound-mac-dot {
-            width: 12px;
-            height: 12px;
-            border-radius: 50%;
-            display: inline-block;
-            margin-right: 8px;
-        }
-        .notfound-mac-dot.red { background: #ff5f56; }
-        .notfound-mac-dot.yellow { background: #ffbd2e; }
-        .notfound-mac-dot.green { background: #27c93f; margin-right: 0; }
         @media (max-width: 600px) {
             .notfound-title { font-size: 3.5rem; }
             .notfound-desc { font-size: 1rem; }
+            .notfound-btn { padding: 10px 24px; font-size: 1rem; }
+        }
+        .notfound-bg-mask {
+            position: fixed;
+            inset: 0;
+            background: rgba(30,32,34,0.55);
+            z-index: 0;
+        }
+        footer {
+            z-index: 2;
+            background: transparent;
+            box-shadow: none;
+            border: none;
+            text-align: center;
+            color: #fff;
+            font-size: 1rem;
+            padding: 0.5em 0;
+            position: relative;
         }
     </style>
 </head>
 <body>
+    <div class="notfound-bg-mask"></div>
     <div class="notfound-container">
-        <div class="notfound-mac-bar">
-            <span class="notfound-mac-dot red"></span>
-            <span class="notfound-mac-dot yellow"></span>
-            <span class="notfound-mac-dot green"></span>
-        </div>
         <div class="notfound-title">404</div>
         <div class="notfound-desc">抱歉，您访问的页面不存在或已被移除。</div>
         <a href="index.html" class="notfound-btn">返回首页</a>
@@ -92,7 +107,9 @@
                 <img src="images/icon.ico" alt="Logo" />
                 <h3>清澈的海水</h3>
             </div>
-            <p>© 2025 ClearSea. 保留所有权利。</p>
+            <p style="color: #ffffffd8;">© 2025 ClearSea. 保留所有权利。</p>
         </div>
     </footer>
+    <script src="prism/prism.js"></script>
 </body>
+</html>

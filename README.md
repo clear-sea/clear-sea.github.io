@@ -1,13 +1,14 @@
-[![English](https://img.shields.io/badge/中文-English-blue)](README-en.md)
-
 # clear-sea.github.io
 
-这是 个人网站
+[![English](https://img.shields.io/badge/中文-English-blue)](README-en.md)
 
-[访问网址](https://clear-sea.github.io/)
+这是一个基于deepseek的个人网站
 
-# 其他
+[https://clear-sea.github.io/](https://clear-sea.github.io/)
 
-本站用GitHub-Pages建成
+## 引用
 
-主要是写写随笔什么的
+1.GitHub-Pages
+2.deepseek
+3.typed.js
+4.prism
