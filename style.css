@@ -7,7 +7,7 @@
     --bg-color: #e6f7ff;
     --card-bg: rgba(255, 255, 255, 0.5);
     --text-color: #212121;
-    --text-secondary: #424242;
+    --text-secondary: #3b3b3b;
     --shadow: rgba(0, 0, 0, 0.1);
     --nav-bg: rgba(255, 255, 255, 0.68);
     --hover-effect: rgba(255, 255, 255, 0.7);
@@ -27,15 +27,15 @@
     --bg-color: #001529;
     --card-bg: rgba(30, 30, 30, 0.5);
     --text-color: #e0e0e0;
-    --text-secondary: #b0b0b0;
+    --text-secondary: #d6d6d6;
     --shadow: rgba(0, 0, 0, 0.3);
     --nav-bg: rgba(0, 21, 41, 0.68);
     --hover-effect: rgba(50, 50, 50, 0.7);
     --click-effect: rgba(0, 15, 29, 0.9);
     --footer-bg: rgba(0, 21, 41, 0.9);
     --contact-card: rgba(30, 30, 30, 0.5);
-    --button-text: #90caf9;
-    --button-border: #90caf9;
+    --button-text: #30a2ff;
+    --button-border: #34a4ff;
     --dividing-line-color: rgba(255, 255, 255, 0.25);
 }
 
@@ -332,6 +332,15 @@ nav {
     background-image: url('images/bg4.webp');
 }
 
+#about-site .section-bg {
+    background: linear-gradient(140deg, #003550 0%, #ad47a8 25% , #007fd4 50%, #2000d4 75%, #150050 100%);
+    opacity: 0.8;
+    /* 或者使用背景图片 */
+    /* background-image: url('images/tech-abstract-bg.jpg'); */
+    background-size: cover;
+    background-position: center;
+}
+
 .section-title {
     text-align: center;
     margin-bottom: 60px;
@@ -397,9 +406,10 @@ nav {
 }
 
 .about-text p {
-    margin-bottom: 20px;
+    margin-bottom: 10px;
     color: var(--text-secondary);
-    line-height: 1.8;
+    line-height: 1.5;
+    font-size: 1rem;
 }
 
 .skills {
@@ -463,6 +473,7 @@ nav {
     padding: 25px;
     text-align: center;
     box-shadow: 0 5px 15px var(--shadow);
+    border: 1px solid rgba(255, 255, 255, 0.1);
     transition: all 0.3s ease;
 }
 
@@ -592,6 +603,7 @@ nav {
     padding: 30px;
     text-align: center;
     box-shadow: 0 5px 15px var(--shadow);
+    border: 1px solid rgba(255, 255, 255, 0.1);
     transition: all 0.3s ease;
 }
 
@@ -638,6 +650,7 @@ nav {
     padding: 30px;
     text-align: center;
     box-shadow: 0 5px 15px var(--shadow);
+    border: 1px solid rgba(255, 255, 255, 0.1);
     transition: all 0.3s ease;
 }
 
@@ -854,5 +867,66 @@ footer p {
         width: 35px;
         height: 35px;
         font-size: 1rem;
+    }
+    .code-snippet {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 400px) {
+    .github-stats {
+        grid-template-columns: 1fr;
+    }
+
+    .welcome-content h2 {
+        font-size: 1.3rem;
+        word-break: break-word;
+    }
+
+    .welcome-content p {
+        font-size: 0.95rem;
+    }
+
+    .logo h1 {
+        font-size: 1rem;
+    }
+
+    .theme-toggle {
+        width: 28px;
+        height: 28px;
+        font-size: 0.9rem;
+        margin-left: 10px;
+    }
+
+    .code-snippet {
+        font-size: 0.8rem;
+        padding: 10px;
+    }
+
+    .section {
+        padding: 35px 5px;
+    }
+
+    .section-title {
+        font-size: 1.2rem;
+    }
+
+    .card,
+    .blog-card,
+    .contact-card {
+        padding: 15px;
+    }
+
+    .footer-logo h3 {
+        font-size: 1.1rem;
+    }
+
+    .footer-social a {
+        width: 36px;
+        height: 36px;
+        font-size: 1.1rem;
+    }
+    .footer-content p {
+        font-size: 0.9rem;
     }
 }

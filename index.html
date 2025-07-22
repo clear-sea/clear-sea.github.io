@@ -49,7 +49,7 @@
     <main id="main-content">
         <section id="home" aria-labelledby="home-title">
             <div class="welcome-content">
-                <h2 id="home-title">Hello，我是<span style="color: white;">ClearSea</span></h2>
+                <h2 id="home-title">Hello，我是<span style="color: white;"><strong>ClearSea</strong></span></h2>
                 <p>业余计算机技术爱好者，目前是一名高中生</p>
                 <div class="cta-buttons">
                     <a href="#about" class="cta-button" tabindex="0">More...</a>
@@ -69,10 +69,21 @@
             <h2 class="section-title">关于我</h2>
             <div class="about-content animate-on-scroll">
                 <div class="about-text">
-                    <p>我是一名业余编程爱好者，自学近5年（但业余时间少）。我的梦想是从事软件开发行业，让爱好变为改变世界的一份力量。</p>
-                    <p>我的爱好多种编程语言和框架，包括JavaScript、Python和C++等,对算法知识略知一二。</p>
-                    <p>在业余时间，我喜欢参与开源项目，撰写技术博客，并不断探索新技术以保持技术敏锐度。</p>
-                    
+                    <h3>个人简介</h3>
+                    <p>清澈的海水（ClearSea），一名热爱编程的高中生，业余编程爱好者；自学近5年（为什么目前水平如此一般...业余时间少而且纯粹自学）。</p>
+                    <p>我对计算机科学充满热情，喜欢探索编程的多种编程语言和框架，包括JavaScript、Python和C++等,对算法知识略知一二。我的梦想是从事软件开发行业，让爱好变为改变世界的一份力量。</p>
+                    <p>编程不仅仅是写代码，更是新时代的艺术。我希望为开源社区做出贡献，并与更多志同道合的人一起学习和成长。</p>
+                    <p>在业余时间，我喜欢参与开源项目，撰写技术博客</p>
+
+                    <h3>其他风采</h3>
+                    <p>除了编程，我还喜欢听音乐、跑步、旅行和摄影。</p>
+                    <p>尤其是电子音乐，希望多发现一些小众宝藏神曲。</p>
+                    <p>虽然没去过多少地方，但是“读万卷书，行万里路”；一无所知的世界，走下去会有惊喜。</p>
+
+                    <div style="text-align: center; margin-top: 40px;">
+                        <a href="https://clear-sea.github.io/clear-sea/" class="btn" target="_blank">进一步了解...</a>
+                    </div>
+
                     <h3>技能专长</h3>
                     <div class="skills">
                         <span class="skill-tag">JavaScript</span>
@@ -99,7 +110,7 @@ def create_solution(problem):
     return implement(design)
 
 # 热爱开源与技术分享
-async def share_knowledge():
+def share_knowledge():
     blog_post = write_article()
     open_source(blog_post)
     return inspire_others()
@@ -145,7 +156,7 @@ async def share_knowledge():
                         <div class="repo-header">
                             <a href="https://github.com/clear-sea/class202305" class="repo-name" target="_blank">clear-sea.github.io</a>
                             <div class="repo-stats">
-                                <span>★ 5</span>
+                                <span><i class="fas fa-star"></i> 5</span>
                             </div>
                         </div>
                         <p class="repo-description">2023级5班([2021级]十五班)班站。</p>
@@ -164,7 +175,7 @@ async def share_knowledge():
                         <div class="repo-header">
                             <a href="https://github.com/clear-sea/MemoriseWords" class="repo-name" target="_blank">Memorise Words</a>
                             <div class="repo-stats">
-                                <span>★ 1</span>
+                                <span><i class="fas fa-star"></i> 1</span>
                             </div>
                         </div>
                         <p class="repo-description">随手写的背单词小程序</p>
@@ -183,7 +194,7 @@ async def share_knowledge():
                         <div class="repo-header">
                             <a href="https://github.com/clear-sea/MineSweeper" class="repo-name" target="_blank">MineSweeper</a>
                             <div class="repo-stats">
-                                <span>★ 2</span>
+                                <span><i class="fas fa-star"></i> 2</span>
                             </div>
                         </div>
                         <p class="repo-description">C++结合EasyX实现的扫雷游戏。</p>
@@ -196,8 +207,27 @@ async def share_knowledge():
                         </div>
                     </div>
                 </div>
-            </div>
-            
+
+                <div class="card">
+                    <div class="repo-card">
+                        <div class="repo-header">
+                            <a href="https://github.com/clear-sea/Function-Image" class="repo-name" target="_blank">Function Image</a>
+                            <div class="repo-stats">    
+                                <span><i class="fas fa-star"></i> 1</span>
+                            </div>
+                        </div>
+                        <p class="repo-description">C++实现的函数图像绘制工具。</p>
+                        <div class="repo-footer">
+                            <div class="repo-language">
+                                <span class="language-color" style="background-color: #5af15a;"></span>
+                                <span>C++</span>
+                            </div>
+                            <span>更新于 2023.7</span>
+                        </div>
+                    </div>
+
+                </div>
+
             <div style="text-align: center; margin-top: 40px;">
                 <a href="https://github.com/clear-sea/" class="btn" target="_blank">更多详见GitHub主页</a>
             </div>
@@ -250,7 +280,7 @@ async def share_knowledge():
                         <i class="fas fa-bullseye"></i>
                     </div>
                     <h3>建站目的</h3>
-                    <p>展现自我，分享关于编程知识与经验的技术博客，促进技术交流。</p>
+                    <p>1.分享探讨技术，展示自己，在成长路上插个信标（bushi<br>2.曾经不了解前端技术，看见那些优雅而高大上的网页，只能说出一句woc；如今也是整了这个网站，自己感觉还是相当好看的。<br>3.22年刚接触GitHub Pages，想尝试一下</p>
                     </div>
                 </div>
                 <!-- 使用技术卡片 -->
