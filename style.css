@@ -1,7 +1,7 @@
 /* 变量定义 */
 :root {
     /* 浅色主题变量 */
-    --primary-color: #1e88e5;
+    --primary-color: #30a2ff;
     --secondary-color: #42a5f5;
     --accent-color: #0d47a1;
     --bg-color: #e6f7ff;
@@ -14,14 +14,12 @@
     --click-effect: rgba(239, 253, 255, 0.9);
     --footer-bg: rgba(208, 240, 255, 0.9);
     --contact-card: rgba(255, 255, 255, 0.5);
-    --button-text: #0d47a1;
-    --button-border: #0d47a1;
     --dividing-line-color: rgba(0, 0, 0, 0.25);
 }
 
 .dark-theme {
     /* 深色主题变量 */
-    --primary-color: #64b5f6;
+    --primary-color: #389af0;
     --secondary-color: #90caf9;
     --accent-color: #0066ff;
     --bg-color: #001529;
@@ -34,8 +32,6 @@
     --click-effect: rgba(0, 15, 29, 0.9);
     --footer-bg: rgba(0, 21, 41, 0.9);
     --contact-card: rgba(30, 30, 30, 0.5);
-    --button-text: #30a2ff;
-    --button-border: #34a4ff;
     --dividing-line-color: rgba(255, 255, 255, 0.25);
 }
 
@@ -334,7 +330,7 @@ nav {
 
 #about-site .section-bg {
     background: linear-gradient(140deg, #003550 0%, #ad47a8 25% , #007fd4 50%, #2000d4 75%, #150050 100%);
-    opacity: 0.8;
+    opacity: 0.55;
     /* 或者使用背景图片 */
     /* background-image: url('images/tech-abstract-bg.jpg'); */
     background-size: cover;
@@ -398,6 +394,13 @@ nav {
     flex-wrap: wrap;
     align-items: center;
     gap: 40px;
+}
+
+.about-content-column {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    width: 100%;
 }
 
 .about-text {
@@ -569,8 +572,8 @@ nav {
 .btn {
     display: inline-block;
     background: transparent;
-    border: 2px solid var(--button-border);
-    color: var(--button-text);
+    border: 2px solid var(--primary-color);
+    color: var(--primary-color);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
     -moz-backdrop-filter: blur(10px);
@@ -581,7 +584,7 @@ nav {
 }
 
 .btn:hover {
-    background-color: var(--button-border);
+    background-color: var(--primary-color);
     color: white;
     transform: translateY(-3px);
     box-shadow: 0 5px 15px var(--shadow);
@@ -696,16 +699,16 @@ nav {
 
 .contact-card a {
     display: inline-block;
-    color: var(--button-text);
+    color: var(--primary-color);
     text-decoration: none;
     font-weight: bold;
     padding: 8px 15px;
-    border: 2px solid var(--button-border);
+    border: 2px solid var(--primary-color);
     transition: all 0.3s ease;
 }
 
 .contact-card a:hover {
-    background: var(--button-border);
+    background: var(--primary-color);
     color: white;
 }
 

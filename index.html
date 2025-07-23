@@ -51,6 +51,18 @@
             <div class="welcome-content">
                 <h2 id="home-title">Hello，我是<span style="color: white;"><strong>ClearSea</strong></span></h2>
                 <p>业余计算机技术爱好者，目前是一名高中生</p>
+                <p id="hitokoto_text"></p>
+                <script>
+                fetch('https://v1.hitokoto.cn')
+                    .then(response => response.json())
+                    .then(data => {
+                        const hitokoto = document.getElementById('hitokoto_text')
+                        hitokoto.href = `https://hitokoto.cn/?uuid=${data.uuid}`
+                        hitokoto.innerText = "一言："+data.hitokoto+" — "+data.from
+                        hitokoto.title = `来自《${data.from}》`
+                    })
+                    .catch(console.error)
+                </script>
                 <div class="cta-buttons">
                     <a href="#about" class="cta-button" tabindex="0">More...</a>
                     <a href="#contact" class="cta-button" tabindex="0">Contact</a>
@@ -69,55 +81,73 @@
             <h2 class="section-title">关于我</h2>
             <div class="about-content animate-on-scroll">
                 <div class="about-text">
-                    <h3>个人简介</h3>
-                    <p>清澈的海水（ClearSea），一名热爱编程的高中生，业余编程爱好者；自学近5年（为什么目前水平如此一般...业余时间少而且纯粹自学）。</p>
-                    <p>我对计算机科学充满热情，喜欢探索编程的多种编程语言和框架，包括JavaScript、Python和C++等,对算法知识略知一二。我的梦想是从事软件开发行业，让爱好变为改变世界的一份力量。</p>
-                    <p>编程不仅仅是写代码，更是新时代的艺术。我希望为开源社区做出贡献，并与更多志同道合的人一起学习和成长。</p>
-                    <p>在业余时间，我喜欢参与开源项目，撰写技术博客</p>
+                    <div class="about-content-column">
+                        <div class="card">
+                            <div class="about-site-card">
+                                <h3><i class="fas fa-id-card" style="color:#6dd6ff;margin-right:8px;"></i>谁是ClearSea？</h3>
+                                <p><i class="fas fa-user-graduate" style="color:#3572A5;margin-right:8px;"></i>高中生，业余编程爱好者一枚，纯自学五年，bug制造机（bushi。</p>
+                                <p><i class="fas fa-flask" style="color:#ffbd2e;margin-right:8px;"></i>折腾：JavaScript、Python、C++，算法偶尔能看懂。</p>
+                                <p><i class="fas fa-quote-left" style="color:#6dd6ff;margin-right:8px;"></i>信条：代码能跑就行，优雅加分。</p>
+                                <p><i class="fas fa-users" style="color:#27c93f;margin-right:8px;"></i>乐趣：开源、写博客、和大佬们一起划水。</p>
+                                <p><i class="fas fa-bullseye" style="color:#ff4545;margin-right:8px;"></i>目标：用兴趣改变世界</p>
+                            </div>
+                        </div>
 
-                    <h3>其他风采</h3>
-                    <p>除了编程，我还喜欢听音乐、跑步、旅行和摄影。</p>
-                    <p>尤其是电子音乐，希望多发现一些小众宝藏神曲。</p>
-                    <p>虽然没去过多少地方，但是“读万卷书，行万里路”；一无所知的世界，走下去会有惊喜。</p>
+                        <div class="card">
+                            <div class="about-site-card">
+                                <h3><i class="fas fa-terminal" style="color:#6dd6ff;margin-right:8px;"></i>我的代码哲学</h3>
+                                <div class="code-snippet mac-code-snippet" style="border-radius: 10px; box-shadow: 0 4px 24px rgba(0,0,0,0.10); overflow: auto; background: #2d2d2d; padding: 0; margin-top: 10px;">
+                                    <div class="mac-bar" style="display: flex; align-items: center; height: 32px; padding: 0 16px; border-radius: 10px 10px 0 0; background: #232323;">
+                                        <span class="mac-dot" style="width:12px;height:12px;border-radius:50%;background:#ff5f56;display:inline-block;margin-right:6px;"></span>
+                                        <span class="mac-dot" style="width:12px;height:12px;border-radius:50%;background:#ffbd2e;display:inline-block;margin-right:6px;"></span>
+                                        <span class="mac-dot" style="width:12px;height:12px;border-radius:50%;background:#27c93f;display:inline-block;"></span>
+                                    </div>
+
+                                    <link rel="stylesheet" href="prism/prism.css">
+                                    <pre class="line-numbers"><code class="language-python"># 代码要短，bug要少
+def life():
+    while True:
+        try:
+            code()
+        except Bug:
+            debug()
+            fix()
+</code></pre>
+<script src="prism/prism.js"></script>
+                                </div>
+                                <p>代码要短，bug要少；写代码就像写诗，优雅是加分项。</p>
+                            </div>
+                        </div>
+
+                        <div class="card">
+                            <div class="about-site-card">
+                                <h3><i class="fas fa-star" style="color:#ffbd2e;margin-right:8px;"></i>其他风采</h3>
+                                <p><i class="fas fa-music" style="color:#6dd6ff;margin-right:8px;"></i>音乐、跑步、旅行、摄影，偶尔假装文艺。</p>
+                                <p><i class="fas fa-headphones" style="color:#3572A5;margin-right:8px;"></i>电子音乐脑袋，搜神曲比搜bug还勤快。</p>
+                                <p><i class="fas fa-road" style="color:#27c93f;margin-right:8px;"></i>世界很大，代码很长，走着瞧。</p>
+                            </div>
+                        </div>
+
+                        <div class="card">
+                            <div class="about-site-card">
+                                <h3><i class="fas fa-cogs" style="color:#ffbd2e;margin-right:8px;"></i>技能专长</h3>
+                                <div class="skills">
+                                    <span class="skill-tag">JavaScript</span>
+                                    <span class="skill-tag">HTML5</span>
+                                    <span class="skill-tag">CSS3</span>
+                                    <span class="skill-tag">Python</span>
+                                    <span class="skill-tag">C++</span>
+                                    <span class="skill-tag">C</span>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
 
                     <div style="text-align: center; margin-top: 40px;">
-                        <a href="https://clear-sea.github.io/clear-sea/" class="btn" target="_blank">进一步了解...</a>
+                            <a href="https://clear-sea.github.io/clear-sea/" class="btn" target="_blank">进一步了解...</a>
                     </div>
 
-                    <h3>技能专长</h3>
-                    <div class="skills">
-                        <span class="skill-tag">JavaScript</span>
-                        <span class="skill-tag">HTML5</span>
-                        <span class="skill-tag">CSS3</span>
-                        <span class="skill-tag">Python</span>
-                        <span class="skill-tag">C++</span>
-                        <span class="skill-tag">C</span>
-                    </div>
-                </div>
-                <div class="about-image">
-                    <!-- 代码高亮与现代化代码框，带Mac风格圆点和行号 -->
-                    <link rel="stylesheet" href="prism/prism.css">
-                    <div class="code-snippet mac-code-snippet" style="border-radius: 10px; box-shadow: 0 4px 24px rgba(0,0,0,0.10); overflow: auto; background: #2d2d2d; padding: 0; margin-top: 20px;">
-                        <div class="mac-bar" style="display: flex; align-items: center; height: 32px; padding: 0 16px; border-radius: 10px 10px 0 0; background: #232323;">
-                            <span class="mac-dot" style="width:12px;height:12px;border-radius:50%;background:#ff5f56;display:inline-block;margin-right:6px;"></span>
-                            <span class="mac-dot" style="width:12px;height:12px;border-radius:50%;background:#ffbd2e;display:inline-block;margin-right:6px;"></span>
-                            <span class="mac-dot" style="width:12px;height:12px;border-radius:50%;background:#27c93f;display:inline-block;"></span>
-                        </div>
-                        <pre class="line-numbers"><code class="language-python"># 简洁高效的代码是我的追求
-def create_solution(problem):
-    analysis = analyze(problem)
-    design = create_design(analysis)
-    return implement(design)
-
-# 热爱开源与技术分享
-def share_knowledge():
-    blog_post = write_article()
-    open_source(blog_post)
-    return inspire_others()
-</code></pre>
-                    </div>
-                    <script src="prism/prism.js"></script>
-                    </div>
                 </div>
             </div>
         </section>
@@ -280,7 +310,7 @@ def share_knowledge():
                         <i class="fas fa-bullseye"></i>
                     </div>
                     <h3>建站目的</h3>
-                    <p>1.分享探讨技术，展示自己，在成长路上插个信标（bushi<br>2.曾经不了解前端技术，看见那些优雅而高大上的网页，只能说出一句woc；如今也是整了这个网站，自己感觉还是相当好看的。<br>3.22年刚接触GitHub Pages，想尝试一下</p>
+                    <p>1.分享探讨技术，展示自己，在成长路上插个信标（bushi<br>2.曾经不了解前端技术，看见那些优雅而高大上的网页，只能说出一句woc；如今也是整了这个网站，自己感觉还是相当好看的。<br>3. 22年刚接触GitHub Pages，想尝试一下</p>
                     </div>
                 </div>
                 <!-- 使用技术卡片 -->
@@ -300,7 +330,7 @@ def share_knowledge():
                         <i class="fas fa-cubes"></i>
                     </div>
                     <h3>第三方库</h3>
-                    <p>Font Awesome 图标库、Prism.js 代码高亮、BootCDN 加速。</p>
+                    <p>1.Font Awesome 图标库<br>2.Prism.js 代码高亮<br>3.BootCDN 加速<br>4.Typed.js 动态打字效果。</p>
                     </div>
                 </div>
             </div>
@@ -357,7 +387,21 @@ def share_knowledge():
                 <img src="images/icon.ico" alt="ClearSea网站图标" />
                 <h3>Clear Sea</h3>
             </div>
-            <p style="color: #3572A5;font-size: 1.2rem;"><strong>让每一行代码为开源世界贡献</strong></p>
+
+            <!-- 打字动效 -->
+            <div style='color: var(--accent-color);font-size: 1.2rem; display: block; height: 2rem; margin-bottom: 12px;' id="typing-text"></div>
+            <script src="https://clear-sea.github.io/class202305/typed.js"></script>
+            <script>
+                var typed = new Typed("#typing-text", {
+                    strings: ["<strong>让每一行代码为开源世界贡献</strong>"],//输出的文字
+                    typeSpeed: 150,//打字的速度
+                    backSpeed: 100,
+                    loop:true,//循环
+                    cursorChar: "",//光标字符
+                    contentType: 'html',//内容类型
+                });
+            </script>
+
             <div class="footer-social" aria-label="社交链接">
                 <a href="https://github.com/clear-sea/" target="_blank" aria-label="GitHub主页"><i class="fab fa-github" aria-hidden="true"></i></a>
                 <a href="#" aria-label="Twitter"><i class="fab fa-twitter" aria-hidden="true"></i></a>
