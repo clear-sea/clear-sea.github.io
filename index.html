@@ -49,20 +49,21 @@
     <main id="main-content">
         <section id="home" aria-labelledby="home-title">
             <div class="welcome-content">
-                <h2 id="home-title">Hello，我是<span style="color: white;"><strong>ClearSea</strong></span></h2>
-                <p>业余计算机技术爱好者，目前是一名高中生</p>
-                <p id="hitokoto_text"></p>
+                <h1 id="home-title">Hello，我是<span style="color: white;"><strong>ClearSea</strong></span></h1>
+                <h2>业余计算机技术爱好者，目前是一名高中生</h2>
+                <!-- 一言部分 -->
+                <p id="hitokoto_text" style="color: #6dd6ff;font-family: '楷体'; font-size: 1.2rem;"></p>
                 <script>
                 fetch('https://v1.hitokoto.cn')
                     .then(response => response.json())
                     .then(data => {
                         const hitokoto = document.getElementById('hitokoto_text')
                         hitokoto.href = `https://hitokoto.cn/?uuid=${data.uuid}`
-                        hitokoto.innerText = "一言："+data.hitokoto+" — "+data.from
-                        hitokoto.title = `来自《${data.from}》`
+                        hitokoto.innerText = "[一言]  "+data.hitokoto+" — "+data.from
                     })
                     .catch(console.error)
                 </script>
+
                 <div class="cta-buttons">
                     <a href="#about" class="cta-button" tabindex="0">More...</a>
                     <a href="#contact" class="cta-button" tabindex="0">Contact</a>
@@ -90,6 +91,7 @@
                                 <p><i class="fas fa-quote-left" style="color:#6dd6ff;margin-right:8px;"></i>信条：代码能跑就行，优雅加分。</p>
                                 <p><i class="fas fa-users" style="color:#27c93f;margin-right:8px;"></i>乐趣：开源、写博客、和大佬们一起划水。</p>
                                 <p><i class="fas fa-bullseye" style="color:#ff4545;margin-right:8px;"></i>目标：用兴趣改变世界</p>
+                                <p><i class="fas fa-quote-right" style="color:#ff932e;margin-right:8px;"></i>座右铭：我也不和谁比，谁也别和我比，我要战胜昨天的自己</p>
                             </div>
                         </div>
 
@@ -115,7 +117,7 @@ def life():
 </code></pre>
 <script src="prism/prism.js"></script>
                                 </div>
-                                <p>代码要短，bug要少；写代码就像写诗，优雅是加分项。</p>
+                                <p>写代码也是艺术，优雅是加分项。</p>
                             </div>
                         </div>
 
@@ -138,6 +140,38 @@ def life():
                                     <span class="skill-tag">Python</span>
                                     <span class="skill-tag">C++</span>
                                     <span class="skill-tag">C</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card">
+                            <div class="about-site-card">
+                                <h3><i class="fas fa-laptop" style="color:#ff7b2e;margin-right:8px;"></i>软件&设备</h3>
+                                <p><i class="fa-brands fa-microsoft" style="color:#00a2ff;margin-right:8px;"></i>系统：Windows 11</p>
+                                <p><i class="fas fa-code" style="color:#005de7;margin-right:8px;"></i>编辑器：Visual Studio Code</p>
+                                <p><i class="fa-brands fa-edge" style="color:#00e79a;margin-right:8px;"></i>浏览器：Edge</p>
+                                <p><i class="fas fa-tools" style="color:#ff7b2e;margin-right:8px;"></i>其他：GitHub Desktop, Powertoy</p>
+                            </div>
+                        </div>
+
+                        <div class="card">
+                            <div class="about-site-card">
+                                <h3><i class="fas fa-headphones" style="color:#6d83ff;margin-right:8px;"></i>上头音乐</h3>
+                                <p><i class="fas fa-music" style="color:#6dd6ff;margin-right:8px;"></i>电子舞曲、House、EDM，编程时的最佳伴侣。</p>
+                                <!-- 需要一组卡片展示我喜欢的三首音乐，每一个卡片点击对应的网易云音乐歌曲链接，并且三个小卡片是歌曲的专辑封面（我会提供album1、2、3的jpg图片），并排展示 -->
+                                <div class="music-card-container">
+                                    <a href="https://music.163.com/#/song?id=456185577&uct2=U2FsdGVkX1824JsYTqzJYYa/MSWSfF4IaujoYneC+Lo=" class="music-card" target="_blank">
+                                        <img src="https://p2.music.126.net/YgDqFhazYZ3s10RmkgIHzg==/18748872278605604.jpg?param=177y177" alt="Album 1">
+                                        <p>Fractures</p>
+                                    </a>
+                                    <a href="https://music.163.com/song?id=418602088&uct2=U2FsdGVkX1/iY84jUd4SW6BlkuPuLtbXc7avHE/qKlw=" class="music-card" target="_blank">
+                                        <img src="https://p2.music.126.net/X_Ukd1BhXdDwsz4NqrisNA==/109951163640412456.jpg?param=130y130" alt="Album 2">
+                                        <p>Neveda</p>
+                                    </a>
+                                    <a href="https://music.163.com/song?id=432698441&uct2=U2FsdGVkX1/31peKn6ASPN9UBa5qZRrW5EVqbJCHro4=" class="music-card" target="_blank">
+                                        <img src="https://p2.music.126.net/Brb_siU1rT3eBqsk1LsrOg==/109951170372861476.jpg?param=130y130" alt="Album 3">
+                                        <p>All we know</p>
+                                    </a>
                                 </div>
                             </div>
                         </div>
@@ -361,11 +395,11 @@ def life():
                 
                 <div class="contact-card">
                     <div class="contact-icon">
-                        <i class="fab fa-linkedin"></i>
+                        <i class="fa-brands fa-bilibili"></i>
                     </div>
-                    <h3>LinkedIn</h3>
-                    <p>暂无...</p>
-                    <a href="#" target="_blank">暂无LinkedIn...</a>
+                    <h3>Bilibili</h3>
+                    <p>B站账号：清澈的海水cls</p>
+                    <a href="https://space.bilibili.com/1402009671" target="_blank">访问Bilibili</a>
                 </div>
                 
                 <div class="contact-card">

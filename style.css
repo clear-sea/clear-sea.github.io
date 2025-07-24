@@ -234,18 +234,15 @@ nav {
     animation: fadeInUp 1s ease;
 }
 
-.welcome-content h2 {
-    font-size: 3rem;
+.welcome-content h1 {
+    font-size: 3.2rem;
     margin-bottom: 20px;
     text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
 }
 
-.welcome-content h2 span {
-    color: #64b5f6;
-}
-
-.welcome-content p {
+.welcome-content h2 {
     font-size: 1.5rem;
+    color: rgba(255, 255, 255, 0.719);
     margin-bottom: 30px;
     text-shadow: 0 1px 5px rgba(0, 0, 0, 0.5);
 }
@@ -397,8 +394,9 @@ nav {
 }
 
 .about-content-column {
+    /* 内容布局：每行几列视屏幕宽度而定 */
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 30px;
     width: 100%;
 }
@@ -427,12 +425,13 @@ nav {
     color: white;
     padding: 8px 20px;
     font-size: 0.9rem;
+    cursor: default;
     transition: all 0.3s ease;
 }
 
 .skill-tag:hover {
     background-color: var(--accent-color);
-    transform: scale(1.05);
+    transform: noen;
 }
 
 .about-image {
@@ -782,6 +781,30 @@ footer p {
     border-top: 1px solid var(--dividing-line-color);
     color: var(--text-secondary);
     font-size: 0.9rem;
+}
+/* 音乐卡片样式 */
+.music-card-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 12px;
+}
+
+.music-card {
+    flex: 1;
+    margin: 0 8px;
+    text-align: center;
+    text-decoration: none;
+    color: inherit;
+}
+
+.music-card img {
+    width: 100%;
+    border-radius: 8px;
+}
+
+.music-card p {
+    margin-top: 8px;
+    font-size: 14px;
 }
 
 /* 动画效果 */
