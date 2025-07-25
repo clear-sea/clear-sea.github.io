@@ -13,7 +13,7 @@
     <meta property="og:image" content="images/icon.ico">
     <meta property="og:url" content="https://clear-sea.github.io/">
 
-    <link rel="icon" href="images/icon.ico">
+    <link rel="icon" href="resource/images/icon.ico" type="image/x-icon">
     <link href="https://cdn.bootcdn.net/ajax/libs/font-awesome/6.7.2/css/all.min.css" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
@@ -30,9 +30,12 @@
     <!-- 导航栏 -->
     <nav aria-label="主导航">
         <div class="logo">
-            <img src="images/icon.ico" alt="ClearSea网站图标" />
-            <h1>ClearSea</h1>
+            <a title="Home" href="#home" tabindex="0">
+                <img src="resource/images/icon.ico" alt="ClearSea网站图标" />
+                <span class="logo-text">ClearSea</span>
+            </a>
         </div>
+
         <ul class="nav-links">
             <li><a href="#home" tabindex="0">首页</a></li>
             <li><a href="#about" tabindex="0">关于我</a></li>
@@ -40,7 +43,8 @@
             <li><a href="#blog" tabindex="0">博客</a></li>
             <li><a href="#contact" tabindex="0">联系</a></li>
         </ul>
-        <button class="theme-toggle" id="themeToggle" aria-label="切换主题">
+
+        <button class="theme-toggle" id="themeToggle" aria-label="切换主题" title="切换主题">
             <i class="fas fa-moon" aria-hidden="true"></i>
         </button>
     </nav>
@@ -49,10 +53,12 @@
     <main id="main-content">
         <section id="home" aria-labelledby="home-title">
             <div class="welcome-content">
-                <h1 id="home-title">Hello，我是<span style="color: white;"><strong>ClearSea</strong></span></h1>
-                <h2>业余计算机技术爱好者，目前是一名高中生</h2>
+                <h1 id="home-title"><span style="color: white;font-family: 'MINECRAFT';"><strong>CLEAR SEA</strong></span></h1>
+                <h2>业余计算机技术爱好者，目前高中生</h2>
                 <!-- 一言部分 -->
-                <p id="hitokoto_text" style="color: #6dd6ff;font-family: '楷体'; font-size: 1.2rem;"></p>
+                <a href="https://hitokoto.cn/" style="text-decoration: none;" title="一言">
+                    <p id="hitokoto_text"></p>
+                </a>
                 <script>
                 fetch('https://v1.hitokoto.cn')
                     .then(response => response.json())
@@ -418,8 +424,8 @@ def life():
     <footer>
         <div class="footer-content">
             <div class="footer-logo">
-                <img src="images/icon.ico" alt="ClearSea网站图标" />
-                <h3>Clear Sea</h3>
+                <img src="/resource/images/icon.ico" alt="ClearSea website icon featuring a stylized blue sea wave with a calm and inviting tone, representing the ClearSea personal homepage" />
+                <h3>清澈的海水</h3>
             </div>
 
             <!-- 打字动效 -->

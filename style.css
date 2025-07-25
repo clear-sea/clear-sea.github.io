@@ -35,6 +35,16 @@
     --dividing-line-color: rgba(255, 255, 255, 0.25);
 }
 
+/* 引入字体 */
+@font-face {
+    font-family: 'Minecraft';
+    src: url(resource/font/5_Minecraft\ AE\(支持中文\).ttf) format('truetype');
+}
+@font-face {
+    font-family: 'MINECRAFT';
+    src: url(resource/font/B_Minecrafter.Reg\(主标题\).ttf) format('truetype');
+}
+
 /* 基础样式 */
 * {
     margin: 0;
@@ -142,22 +152,32 @@ nav {
     align-items: center;
 }
 
+.logo a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.2rem;
+    transition: color 0.3s ease;
+}
+
 .logo img {
     height: 40px;
     margin-right: 10px;
     border-radius: 50%;
     filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.2));
-    transition: transform 0.3s ease;
+    transition: all 0.3s ease;
 }
 
 .logo img:hover {
     transform: rotate(10deg);
 }
 
-.logo h1 {
-    font-size: 1.5rem;
+.logo-text {
+    font-size: 1.7rem;
     color: var(--primary-color);
     font-weight: bold;
+    font-family: 'MINECRAFT';
 }
 
 .nav-links {
@@ -218,7 +238,7 @@ nav {
 /* 欢迎区域样式 */
 #home {
     height: 100vh;
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)), url('images/homeBG.webp') no-repeat center center/cover;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)), url('/resource/images/homeBG.webp') no-repeat center center/cover;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -235,16 +255,23 @@ nav {
 }
 
 .welcome-content h1 {
-    font-size: 3.2rem;
+    font-size: 4.5rem;
     margin-bottom: 20px;
     text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
 }
 
 .welcome-content h2 {
     font-size: 1.5rem;
-    color: rgba(255, 255, 255, 0.719);
+    color: rgba(255, 255, 255, 0.9);
     margin-bottom: 30px;
     text-shadow: 0 1px 5px rgba(0, 0, 0, 0.5);
+}
+
+#hitokoto_text {
+    color: #6dd6ffb9;
+    font-family: 'Minecraft';
+    font-size: 1.2rem;
+    margin-bottom: 30px;
 }
 
 .cta-buttons {
@@ -310,19 +337,19 @@ nav {
 }
 
 #about .section-bg {
-    background-image: url('images/bg1.webp');
+    background-image: url('resource/images/bg1.webp');
 }
 
 #github .section-bg {
-    background-image: url('images/bg2.webp');
+    background-image: url('resource/images/bg2.webp');
 }
 
 #blog .section-bg {
-    background-image: url('images/bg3.webp');
+    background-image: url('resource/images/bg3.webp');
 }
 
 #contact .section-bg {
-    background-image: url('images/bg4.webp');
+    background-image: url('resource/images/bg4.webp');
 }
 
 #about-site .section-bg {
