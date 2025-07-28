@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<!-- 这是一个壁纸下载页面 -->
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8" />
+    <title>清澈的海水 | 壁纸下载</title>
+    <link rel="stylesheet" href="../style.css" />
+    <link rel="icon" href="../resource/images/icon.ico" type="image/x-icon" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f8ff;
+            color: #333;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #0077be;
+        }
+
+        .wallpaper-card {
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            padding: 16px;
+            margin: 16px 0;
+            display: flex;
+            align-items: center;
+        }
+
+        .wallpaper-card img {
+            max-width: 100px;
+            border-radius: 4px;
+            margin-right: 16px;
+        }
+
+        .wallpaper-card p {
+            flex-grow: 1;
+            margin: 0;
+        }
+
+        .wallpaper-card a {
+            background-color: #0077be;
+            color: white;
+            padding: 8px 12px;
+            text-decoration: none;
+            border-radius: 4px;
+        }
+
+        .wallpaper-card a:hover {
+            background-color: #005f8c;
+        }
+    </style>
+</head>
+<body>
+    <h1>清澈的海水 壁纸下载</h1>
+    <div class="wallpaper-card">
+        <img src="https://clear-sea.github.io/clear-sea/backgroundPictures/Iceland01_4K.jpg" alt="Iceland01_4K" width="300"/>
+        <p>Iceland01_4K</p>
+        <a href="https://clear-sea.github.io/clear-sea/backgroundPictures/Iceland01_4K.jpg" download>下载Iceland01_4K</a>
+    </div>
+    <div class="wallpaper-card">
+        <img src="https://clear-sea.github.io/clear-sea/backgroundPictures/Iceland02_4K.jpg" alt="Iceland02_4K" width="300"/>
+        <p>Iceland02_4K</p>
+        <a href="https://clear-sea.github.io/clear-sea/backgroundPictures/Iceland02_4K.jpg" download>下载Iceland02_4K</a>
+    </div>
+    <div class="wallpaper-card">
+        <img src="https://clear-sea.github.io/clear-sea/backgroundPictures/Iceland03_4K.jpg" alt="Iceland03_4K" width="300"/>
+        <p>Iceland03_4K</p>
+        <a href="https://clear-sea.github.io/clear-sea/backgroundPictures/Iceland03_4K.jpg" download>下载Iceland03_4K</a>
+    </div>
+    <div class="wallpaper-card">
+        <img src="https://clear-sea.github.io/clear-sea/backgroundPictures/Iceland04_4K.jpg" alt="Iceland04_4K" width="300"/>
+        <p>Iceland04_4K</p>
+        <a href="https://clear-sea.github.io/clear-sea/backgroundPictures/Iceland04_4K.jpg" download>下载Iceland04_4K</a>
+    </div>
+    <!-- copyright部分 -->
+    <footer>
+        <div class="copyright">
+            <p>© 2022–<span id="currentYear"></span> ClearSea. 保留所有权利。</p>
+            <script>
+                document.getElementById('currentYear').textContent = new Date().getFullYear();
+            </script>
+        </div>
+    </footer>
+</body>
+</html>
