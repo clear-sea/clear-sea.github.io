@@ -348,6 +348,11 @@ nav {
     background-image: url('resource/images/bg3.webp');
 }
 
+#pages .section-bg {
+    background-image: url('resource/images/bg2.webp');
+    opacity: 0.3;
+}
+
 #contact .section-bg {
     background-image: url('resource/images/bg4.webp');
 }
@@ -661,6 +666,73 @@ nav {
     color: var(--text-secondary);
     margin-bottom: 20px;
     line-height: 1.6;
+}
+
+/* 其他页面部分 */
+.page-links-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.page-link-card {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    min-height: 260px;
+    padding: 30px;
+    background: var(--card-bg);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    box-shadow: 0 5px 15px var(--shadow);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: var(--text-color);
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.page-link-card:hover {
+    transform: translateY(-10px);
+    background: var(--hover-effect);
+    box-shadow: 0 15px 30px var(--shadow);
+}
+
+.page-link-icon {
+    width: 64px;
+    height: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--primary-color);
+    color: white;
+    border-radius: 50%;
+    font-size: 1.7rem;
+}
+
+.page-link-card h3 {
+    margin-bottom: 10px;
+    color: var(--primary-color);
+}
+
+.page-link-card p {
+    color: var(--text-secondary);
+    line-height: 1.6;
+}
+
+.page-link-action {
+    margin-top: auto;
+    color: var(--primary-color);
+    font-weight: bold;
+}
+
+.page-link-action i {
+    margin-left: 6px;
+    transition: transform 0.3s ease;
+}
+
+.page-link-card:hover .page-link-action i {
+    transform: translateX(5px);
 }
 
 /* 联系部分 */

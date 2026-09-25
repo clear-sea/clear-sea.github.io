@@ -1,0 +1,681 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="ClearSea的个人音乐创作页面，收录原创音乐作品。">
+    <title>My Musics | ClearSea</title>
+    <link rel="icon" href="../resource/images/icon.ico" type="image/x-icon">
+    <link href="https://cdn.bootcdn.net/ajax/libs/font-awesome/6.7.2/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../style.css">
+    <style>
+        body {
+            min-height: 100vh;
+            overflow: hidden;
+            font-family: "Segoe UI Variable", "Segoe UI", "Microsoft YaHei UI", "Microsoft YaHei", sans-serif;
+            background: linear-gradient(145deg, #e6f7ff 0%, #c9efff 48%, #eaf7ff 100%);
+        }
+
+        body.dark-theme {
+            background: linear-gradient(145deg, #001529 0%, #003550 48%, #001529 100%);
+        }
+
+        .music-page {
+            width: min(1100px, 90%);
+            height: 100vh;
+            margin: 0 auto;
+            padding: 24px 0;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+
+        .music-page-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+            margin-bottom: 28px;
+            flex-shrink: 0;
+        }
+
+        .back-link {
+            color: var(--primary-color);
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        .back-link i {
+            margin-right: 8px;
+        }
+
+        .music-page-title {
+            margin-bottom: 8px;
+            color: var(--primary-color);
+            font-family: "Segoe UI Variable Display", "Segoe UI", "Microsoft YaHei UI", sans-serif;
+            font-size: clamp(2rem, 4vw, 3.4rem);
+            font-weight: 800;
+            letter-spacing: 0.02em;
+            line-height: 1.05;
+            text-align: center;
+        }
+
+        .music-page-intro {
+            max-width: 650px;
+            margin: 0 auto 24px;
+            color: var(--text-secondary);
+            text-align: center;
+            line-height: 1.5;
+        }
+
+        .music-player {
+            max-width: 900px;
+            width: 100%;
+            flex: 1;
+            min-height: 0;
+            margin: 0 auto;
+            padding: 34px;
+            display: grid;
+            grid-template-columns: minmax(235px, 0.85fr) minmax(0, 1.5fr);
+            grid-template-rows: auto auto auto 1fr;
+            gap: 0 34px;
+            overflow: hidden;
+            background: linear-gradient(145deg, rgba(255, 255, 255, 0.62), rgba(255, 255, 255, 0.22));
+            border: 1px solid rgba(255, 255, 255, 0.35);
+            box-shadow: 0 18px 50px var(--shadow);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+        }
+
+        .dark-theme .music-player {
+            background: linear-gradient(145deg, rgba(30, 50, 70, 0.82), rgba(10, 25, 42, 0.7));
+            border-color: rgba(144, 202, 249, 0.16);
+        }
+
+        .now-playing {
+            grid-column: 2;
+            grid-row: 1;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            min-width: 0;
+            padding-bottom: 28px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .now-playing-cover {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex: 0 0 82px;
+            width: 82px;
+            height: 82px;
+            border-radius: 50%;
+            background: var(--primary-color);
+            color: white;
+            font-size: 2rem;
+            box-shadow: 0 0 0 8px rgba(48, 162, 255, 0.14), 0 10px 24px rgba(13, 71, 161, 0.25);
+        }
+
+        .music-player.is-playing .now-playing-cover {
+            animation: recordSpin 5s linear infinite;
+        }
+
+        .now-playing-label {
+            display: inline-flex;
+            align-items: center;
+            gap: 7px;
+            margin-bottom: 5px;
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+        }
+
+        .now-playing h2 {
+            overflow: hidden;
+            color: var(--primary-color);
+            font-family: "Segoe UI Variable Display", "Segoe UI", "Microsoft YaHei UI", sans-serif;
+            font-size: 1.7rem;
+            line-height: 1.25;
+            white-space: nowrap;
+        }
+
+        .song-title-track {
+            display: inline-block;
+            padding-right: 48px;
+            white-space: nowrap;
+        }
+
+        .now-playing h2.is-scrolling .song-title-track {
+            animation: titleMarquee 12s ease-in-out infinite alternate;
+        }
+
+        .now-playing > div:last-child {
+            flex: 1;
+            min-width: 0;
+        }
+
+        .now-playing-meta {
+            margin-top: 4px;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        .player-progress {
+            grid-column: 2;
+            grid-row: 2;
+            display: grid;
+            grid-template-columns: 48px 1fr 48px;
+            align-items: center;
+            gap: 12px;
+            margin: 27px 0 18px;
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+        }
+
+        .player-progress input,
+        .volume-control input {
+            width: 100%;
+            height: 5px;
+            border-radius: 5px;
+            accent-color: var(--primary-color);
+            cursor: pointer;
+        }
+
+        .player-progress input {
+            height: 7px;
+        }
+
+        .player-controls {
+            grid-column: 2;
+            grid-row: 3;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 18px;
+        }
+
+        .player-button,
+        .play-button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            border: 0;
+            border-radius: 50%;
+            color: var(--primary-color);
+            background: transparent;
+            cursor: pointer;
+            font-size: 1.2rem;
+        }
+
+        .player-button {
+            position: relative;
+            width: 42px;
+            height: 42px;
+        }
+
+        .player-button:focus-visible,
+        .play-button:focus-visible,
+        .volume-toggle:focus-visible,
+        .playlist-item:focus-visible {
+            outline: 3px solid rgba(48, 162, 255, 0.4);
+            outline-offset: 3px;
+        }
+
+        .skip-label {
+            position: absolute;
+            font-size: 0.55rem;
+            font-weight: bold;
+            transform: translateY(1px);
+        }
+
+        .play-button {
+            width: 58px;
+            height: 58px;
+            background: var(--primary-color);
+            color: white;
+            font-size: 1.4rem;
+        }
+
+        .player-button:hover,
+        .play-button:hover {
+            transform: scale(1.08);
+            color: var(--accent-color);
+        }
+
+        .play-button:hover {
+            color: white;
+            background: var(--accent-color);
+        }
+
+        .player-options {
+            grid-column: 2;
+            grid-row: 4;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+            margin-top: 20px;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        .volume-control {
+            position: relative;
+            display: flex;
+            align-items: center;
+            width: auto;
+        }
+
+        .volume-toggle {
+            width: 34px;
+            height: 34px;
+            border: 0;
+            color: var(--primary-color);
+            background: transparent;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        .volume-toggle:hover {
+            transform: scale(1.08);
+            color: var(--accent-color);
+        }
+
+        .volume-slider {
+            position: absolute;
+            bottom: calc(100% + 10px);
+            left: 0;
+            display: none;
+            width: 170px;
+            padding: 12px 14px;
+            border: 1px solid rgba(144, 202, 249, 0.2);
+            border-radius: 8px;
+            background: rgba(0, 21, 41, 0.94);
+            box-shadow: 0 10px 25px var(--shadow);
+        }
+
+        .volume-control.is-open .volume-slider {
+            display: block;
+        }
+
+        .volume-slider input {
+            display: block;
+            width: 100%;
+        }
+
+        .player-hint {
+            color: var(--text-secondary);
+            font-size: 0.8rem;
+            opacity: 0.8;
+        }
+
+        .playlist {
+            grid-column: 1;
+            grid-row: 1 / span 4;
+            display: grid;
+            gap: 10px;
+            margin-top: 0;
+            flex: 1 1 auto;
+            min-height: 0;
+            overflow-y: auto;
+            padding: 2px 8px 2px 2px;
+            scrollbar-color: var(--primary-color) transparent;
+            scrollbar-width: thin;
+        }
+
+        .playlist::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        .playlist::-webkit-scrollbar-thumb {
+            border-radius: 6px;
+            background: var(--primary-color);
+        }
+
+        .playlist-item {
+            display: grid;
+            grid-template-columns: 28px minmax(0, 1fr) auto;
+            align-items: center;
+            gap: 8px;
+            width: 100%;
+            height: 68px;
+            min-height: 68px;
+            padding: 12px 10px;
+            border: 1px solid transparent;
+            border-radius: 8px;
+            color: var(--text-color);
+            background: rgba(255, 255, 255, 0.2);
+            text-align: left;
+            cursor: pointer;
+        }
+
+        .playlist-item:hover,
+        .playlist-item.active {
+            border-color: var(--primary-color);
+            background: var(--hover-effect);
+        }
+
+        .playlist-item.active {
+            box-shadow: inset 4px 0 0 var(--primary-color);
+        }
+
+        .playlist-number {
+            color: var(--primary-color);
+            font-weight: bold;
+            text-align: center;
+        }
+
+        .playlist-item strong {
+            overflow: hidden;
+            display: block;
+            margin-bottom: 3px;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+
+        .playlist-item small {
+            color: var(--text-secondary);
+        }
+
+        .playlist-status {
+            color: var(--primary-color);
+        }
+
+        .playlist-item.is-playing .playlist-status {
+            animation: pulse 1.4s ease-in-out infinite;
+        }
+
+        @keyframes recordSpin {
+            to { transform: rotate(360deg); }
+        }
+
+        @keyframes pulse {
+            50% { opacity: 0.45; transform: scale(0.85); }
+        }
+
+        @keyframes titleMarquee {
+            from { transform: translateX(0); }
+            to { transform: translateX(var(--title-shift)); }
+        }
+
+        @media (max-width: 576px) {
+            .music-page {
+                width: 88%;
+                padding: 18px 0;
+            }
+
+            .music-page-header {
+                margin-bottom: 22px;
+            }
+
+            .music-page-title {
+                font-size: 2.6rem;
+            }
+
+            .music-player {
+                padding: 20px;
+                grid-template-columns: 1fr;
+                grid-template-rows: auto auto auto auto minmax(0, 1fr);
+                gap: 0;
+            }
+
+            .now-playing {
+                grid-column: 1;
+                grid-row: 1;
+            }
+
+            .player-progress {
+                grid-column: 1;
+                grid-row: 2;
+            }
+
+            .player-controls {
+                grid-column: 1;
+                grid-row: 3;
+            }
+
+            .player-options {
+                grid-column: 1;
+                grid-row: 4;
+            }
+
+            .playlist {
+                grid-column: 1;
+                grid-row: 5;
+                margin-top: 24px;
+            }
+
+            .now-playing-cover {
+                flex-basis: 62px;
+                width: 62px;
+                height: 62px;
+                font-size: 1.5rem;
+            }
+
+            .now-playing h2 {
+                font-size: 1.35rem;
+            }
+
+            .now-playing-meta {
+                font-size: 0.8rem;
+            }
+
+            .player-options {
+                align-items: stretch;
+                flex-direction: column;
+            }
+
+            .volume-control {
+                width: auto;
+            }
+        }
+    </style>
+</head>
+<body class="dark-theme">
+    <main class="music-page">
+        <header class="music-page-header">
+            <a class="back-link" href="../index.html">
+                <i class="fas fa-arrow-left" aria-hidden="true"></i>返回首页
+            </a>
+            <button class="theme-toggle" id="themeToggle" aria-label="切换主题" title="切换主题">
+                <i class="fas fa-sun" aria-hidden="true"></i>
+            </button>
+        </header>
+
+        <h1 class="music-page-title">My Musics</h1>
+        <p class="music-page-intro">这里记录我在音乐创作上的尝试与灵感。戴上耳机，听听这些还在不断生长的作品。</p>
+
+        <section class="music-player" id="musicPlayer" aria-label="音乐播放器">
+            <div class="now-playing">
+                <div class="now-playing-cover" aria-hidden="true"><i class="fas fa-record-vinyl"></i></div>
+                <div>
+                    <p class="now-playing-label"><i class="fas fa-waveform-lines" aria-hidden="true"></i>正在播放</p>
+                    <h2 id="currentTitle"><span class="song-title-track" id="currentTitleText">Music 01</span></h2>
+                    <p class="now-playing-meta">ClearSea Original Collection</p>
+                </div>
+            </div>
+
+            <div class="player-progress">
+                <span id="currentTime">0:00</span>
+                <input id="progressBar" type="range" min="0" max="100" value="0" aria-label="播放进度">
+                <span id="duration">0:00</span>
+            </div>
+
+            <div class="player-controls">
+                <button class="player-button" id="previousButton" type="button" title="上一首" aria-label="上一首">
+                    <i class="fas fa-backward-step" aria-hidden="true"></i>
+                </button>
+                <button class="player-button" id="rewindButton" type="button" title="后退 10 秒" aria-label="后退 10 秒">
+                    <i class="fas fa-rotate-left" aria-hidden="true"></i><span class="skip-label">10</span>
+                </button>
+                <button class="play-button" id="playButton" type="button" title="播放" aria-label="播放">
+                    <i class="fas fa-play" aria-hidden="true"></i>
+                </button>
+                <button class="player-button" id="forwardButton" type="button" title="前进 10 秒" aria-label="前进 10 秒">
+                    <i class="fas fa-rotate-right" aria-hidden="true"></i><span class="skip-label">10</span>
+                </button>
+                <button class="player-button" id="nextButton" type="button" title="下一首" aria-label="下一首">
+                    <i class="fas fa-forward-step" aria-hidden="true"></i>
+                </button>
+            </div>
+
+            <div class="player-options">
+                <div class="volume-control">
+                    <button class="volume-toggle" id="volumeButton" type="button" title="调整音量" aria-label="调整音量" aria-expanded="false">
+                        <i class="fas fa-volume-high" aria-hidden="true"></i>
+                    </button>
+                    <div class="volume-slider" id="volumeSlider">
+                        <input id="volumeBar" type="range" min="0" max="1" step="0.01" value="1" aria-label="音量">
+                    </div>
+                </div>
+                <span class="player-hint"><i class="fas fa-keyboard" aria-hidden="true"></i> 空格播放 · ← → 快进</span>
+            </div>
+
+            <div class="playlist" id="playlist" aria-label="播放列表">
+            </div>
+            <audio id="audioPlayer" preload="metadata"></audio>
+        </section>
+    </main>
+
+    <script>
+        const themeToggle = document.getElementById('themeToggle');
+        const themeIcon = themeToggle.querySelector('i');
+
+        themeToggle.addEventListener('click', () => {
+            document.body.classList.toggle('dark-theme');
+            const isDark = document.body.classList.contains('dark-theme');
+            themeIcon.classList.toggle('fa-moon', !isDark);
+            themeIcon.classList.toggle('fa-sun', isDark);
+        });
+
+        const tracks = [
+            { title: 'A Sky Full Of Stars & 夜空中最亮的星 (ClearSea Mashup)', file: 'A Sky Full Of Stars&夜空中最亮的星(Clearsea Mashup).mp3' },
+            { title: 'Take Me Hand (ClearSea Remix) [Original]', file: 'Take Me Hand(Clearsea Remix)[Original].mp3' },
+            { title: 'Take Me Hand (ClearSea Remix) [Radio Edit]', file: 'Take Me Hand(Clearsea Remix)[Radio Edit].mp3' },
+            { title: 'Under The Tale of Avicii (Undertale Prog House Version)', file: 'Under The Tale of Avicii(Undertale Prog House Version).mp3' },
+            { title: 'We Burn (ClearSea Piece Remake)', file: 'We Burn(Clearsea Piece Remake).mp3' },
+            { title: "What's this", file: "What's this.mp3" },
+            { title: '我想当风 EDM Version (ClearSea Remix)', file: '我想当风 EDM Version(ClearSea Remix).mp3' },
+            { title: '暗暗慢慢 (Instrumental)', file: '暗暗慢慢(Instrumental).mp3' }
+        ];
+        const audioPlayer = document.getElementById('audioPlayer');
+        const musicPlayer = document.getElementById('musicPlayer');
+        const playButton = document.getElementById('playButton');
+        const playIcon = playButton.querySelector('i');
+        const progressBar = document.getElementById('progressBar');
+        const volumeBar = document.getElementById('volumeBar');
+        const volumeControl = document.querySelector('.volume-control');
+        const volumeButton = document.getElementById('volumeButton');
+        const volumeIcon = volumeButton.querySelector('i');
+        const currentTitle = document.getElementById('currentTitle');
+        const currentTitleText = document.getElementById('currentTitleText');
+        const currentTime = document.getElementById('currentTime');
+        const duration = document.getElementById('duration');
+        const playlist = document.getElementById('playlist');
+        const encodeTrackPath = (file) => `../resource/musics/${file.split('/').map(encodeURIComponent).join('/')}`;
+        playlist.innerHTML = tracks.map((track, index) => `
+            <button class="playlist-item${index === 0 ? ' active' : ''}" type="button" data-index="${index}">
+                <span class="playlist-number">${String(index + 1).padStart(2, '0')}</span>
+                <span><strong>${track.title}</strong><small>ClearSea Music ${String(index + 1).padStart(2, '0')}</small></span>
+                <span class="playlist-status"><i class="fas fa-${index === 0 ? 'play' : 'music'}" aria-hidden="true"></i></span>
+            </button>`).join('');
+        const playlistItems = [...document.querySelectorAll('.playlist-item')];
+        let currentIndex = 0;
+
+        const updateTitleOverflow = () => {
+            currentTitle.classList.remove('is-scrolling');
+            requestAnimationFrame(() => {
+                const overflow = currentTitleText.scrollWidth - currentTitle.clientWidth;
+                currentTitle.style.setProperty('--title-shift', `${Math.min(0, -overflow)}px`);
+                if (overflow > 2) currentTitle.classList.add('is-scrolling');
+            });
+        };
+
+        const formatTime = (seconds) => {
+            if (!Number.isFinite(seconds)) return '0:00';
+            const minutes = Math.floor(seconds / 60);
+            const remainingSeconds = Math.floor(seconds % 60).toString().padStart(2, '0');
+            return `${minutes}:${remainingSeconds}`;
+        };
+
+        const updatePlayButton = () => {
+            const isPlaying = !audioPlayer.paused;
+            playIcon.className = isPlaying ? 'fas fa-pause' : 'fas fa-play';
+            playButton.title = isPlaying ? '暂停' : '播放';
+            playButton.setAttribute('aria-label', isPlaying ? '暂停' : '播放');
+            musicPlayer.classList.toggle('is-playing', isPlaying);
+            playlistItems.forEach((item, itemIndex) => {
+                item.classList.toggle('is-playing', isPlaying && itemIndex === currentIndex);
+                item.querySelector('.playlist-status i').className = itemIndex === currentIndex && isPlaying ? 'fas fa-volume-high' : itemIndex === currentIndex ? 'fas fa-play' : 'fas fa-music';
+            });
+        };
+
+        const loadTrack = (index, shouldPlay = false) => {
+            currentIndex = (index + tracks.length) % tracks.length;
+            const track = tracks[currentIndex];
+            audioPlayer.src = encodeTrackPath(track.file);
+            currentTitleText.textContent = track.title;
+            updateTitleOverflow();
+            currentTime.textContent = '0:00';
+            duration.textContent = '0:00';
+            progressBar.value = 0;
+            playlistItems.forEach((item, itemIndex) => {
+                item.classList.toggle('active', itemIndex === currentIndex);
+                item.querySelector('.playlist-status i').className = itemIndex === currentIndex ? 'fas fa-play' : 'fas fa-music';
+            });
+            if (shouldPlay) audioPlayer.play().catch(() => updatePlayButton());
+        };
+
+        playButton.addEventListener('click', () => {
+            if (audioPlayer.paused) audioPlayer.play().catch(() => updatePlayButton());
+            else audioPlayer.pause();
+        });
+        document.getElementById('previousButton').addEventListener('click', () => loadTrack(currentIndex - 1, true));
+        document.getElementById('nextButton').addEventListener('click', () => loadTrack(currentIndex + 1, true));
+        document.getElementById('rewindButton').addEventListener('click', () => {
+            audioPlayer.currentTime = Math.max(0, audioPlayer.currentTime - 10);
+        });
+        document.getElementById('forwardButton').addEventListener('click', () => {
+            audioPlayer.currentTime = Math.min(audioPlayer.duration || 0, audioPlayer.currentTime + 10);
+        });
+        playlistItems.forEach((item) => item.addEventListener('click', () => loadTrack(Number(item.dataset.index), true)));
+        progressBar.addEventListener('input', () => {
+            if (audioPlayer.duration) audioPlayer.currentTime = (progressBar.value / 100) * audioPlayer.duration;
+        });
+        volumeBar.addEventListener('input', () => {
+            audioPlayer.volume = volumeBar.value;
+            audioPlayer.muted = audioPlayer.volume === 0;
+            volumeIcon.className = audioPlayer.muted ? 'fas fa-volume-xmark' : audioPlayer.volume < 0.5 ? 'fas fa-volume-low' : 'fas fa-volume-high';
+        });
+        volumeButton.addEventListener('click', () => {
+            const isOpen = volumeControl.classList.toggle('is-open');
+            volumeButton.setAttribute('aria-expanded', isOpen);
+        });
+        document.addEventListener('click', (event) => {
+            if (!volumeControl.contains(event.target)) {
+                volumeControl.classList.remove('is-open');
+                volumeButton.setAttribute('aria-expanded', 'false');
+            }
+        });
+        audioPlayer.addEventListener('loadedmetadata', () => { duration.textContent = formatTime(audioPlayer.duration); });
+        audioPlayer.addEventListener('timeupdate', () => {
+            currentTime.textContent = formatTime(audioPlayer.currentTime);
+            progressBar.value = audioPlayer.duration ? (audioPlayer.currentTime / audioPlayer.duration) * 100 : 0;
+        });
+        audioPlayer.addEventListener('play', updatePlayButton);
+        audioPlayer.addEventListener('pause', updatePlayButton);
+        audioPlayer.addEventListener('ended', () => loadTrack(currentIndex + 1, true));
+        document.addEventListener('keydown', (event) => {
+            if (event.target.matches('input, select, textarea')) return;
+            if (event.code === 'Space') { event.preventDefault(); playButton.click(); }
+            if (event.code === 'ArrowLeft') audioPlayer.currentTime = Math.max(0, audioPlayer.currentTime - 5);
+            if (event.code === 'ArrowRight') audioPlayer.currentTime = Math.min(audioPlayer.duration || 0, audioPlayer.currentTime + 5);
+        });
+
+        audioPlayer.volume = volumeBar.value;
+        loadTrack(0);
+    </script>
+</body>
+</html>
